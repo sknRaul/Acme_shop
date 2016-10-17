@@ -39,6 +39,16 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -135,6 +145,37 @@ public class ViewSuppliers extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Buscar");
+
+        jMenuItem2.setText("Por id");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Por Nombre");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Por RFC");
+        jMenu1.add(jMenuItem4);
+
+        jMenuItem5.setText("Por Calle");
+        jMenu1.add(jMenuItem5);
+
+        jMenuItem6.setText("Por Colonia");
+        jMenu1.add(jMenuItem6);
+
+        jMenuItem7.setText("Por Ciudad");
+        jMenu1.add(jMenuItem7);
+
+        jMenuItem8.setText("Por Estado");
+        jMenu1.add(jMenuItem8);
+
+        jMenuItem9.setText("Por Contacto");
+        jMenu1.add(jMenuItem9);
+
+        jMenuItem10.setText("Por telefono");
+        jMenu1.add(jMenuItem10);
+
+        jMenuItem11.setText("Por e-mail");
+        jMenu1.add(jMenuItem11);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Agregar");
@@ -206,6 +247,16 @@ public class ViewSuppliers extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
