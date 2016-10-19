@@ -34,18 +34,18 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jl_backGround = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        jmi_id = new javax.swing.JMenuItem();
+        jmi_name = new javax.swing.JMenuItem();
+        jmi_RFC = new javax.swing.JMenuItem();
+        jmi_streed = new javax.swing.JMenuItem();
+        jmi_hood = new javax.swing.JMenuItem();
+        jmi_city = new javax.swing.JMenuItem();
+        jmi_state = new javax.swing.JMenuItem();
+        jmi_contact = new javax.swing.JMenuItem();
+        jmi_phone = new javax.swing.JMenuItem();
+        jmi_email = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmi_add = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,19 +59,19 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "RFC", "Calle", "Colonia", "Ciudad", "Estado", "Contacto", "Telefono", "E-mail"
             }
         ));
         jsc_table.setViewportView(jTable1);
 
         jp_barckGround.add(jsc_table);
-        jsc_table.setBounds(70, 140, 390, 190);
+        jsc_table.setBounds(10, 110, 500, 100);
 
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jl_backGround.setText("jLabel1");
@@ -80,42 +80,42 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         jMenu1.setText("Buscar");
 
-        jMenuItem2.setText("Por id");
-        jMenu1.add(jMenuItem2);
+        jmi_id.setText("Por id");
+        jMenu1.add(jmi_id);
 
-        jMenuItem3.setText("Por Nombre");
-        jMenu1.add(jMenuItem3);
+        jmi_name.setText("Por Nombre");
+        jMenu1.add(jmi_name);
 
-        jMenuItem4.setText("Por RFC");
-        jMenu1.add(jMenuItem4);
+        jmi_RFC.setText("Por RFC");
+        jMenu1.add(jmi_RFC);
 
-        jMenuItem5.setText("Por Calle");
-        jMenu1.add(jMenuItem5);
+        jmi_streed.setText("Por Calle");
+        jMenu1.add(jmi_streed);
 
-        jMenuItem6.setText("Por Colonia");
-        jMenu1.add(jMenuItem6);
+        jmi_hood.setText("Por Colonia");
+        jMenu1.add(jmi_hood);
 
-        jMenuItem7.setText("Por Ciudad");
-        jMenu1.add(jMenuItem7);
+        jmi_city.setText("Por Ciudad");
+        jMenu1.add(jmi_city);
 
-        jMenuItem8.setText("Por Estado");
-        jMenu1.add(jMenuItem8);
+        jmi_state.setText("Por Estado");
+        jMenu1.add(jmi_state);
 
-        jMenuItem9.setText("Por Contacto");
-        jMenu1.add(jMenuItem9);
+        jmi_contact.setText("Por Contacto");
+        jMenu1.add(jmi_contact);
 
-        jMenuItem10.setText("Por telefono");
-        jMenu1.add(jMenuItem10);
+        jmi_phone.setText("Por telefono");
+        jMenu1.add(jmi_phone);
 
-        jMenuItem11.setText("Por e-mail");
-        jMenu1.add(jMenuItem11);
+        jmi_email.setText("Por e-mail");
+        jMenu1.add(jmi_email);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Agregar");
 
-        jMenuItem1.setText("Nuevo Proveedor");
-        jMenu2.add(jMenuItem1);
+        jmi_add.setText("Nuevo Proveedor");
+        jMenu2.add(jmi_add);
 
         jMenuBar1.add(jMenu2);
 
@@ -172,24 +172,24 @@ public class ViewSuppliers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel jl_backGround;
-    private javax.swing.JLabel jl_title;
+    public javax.swing.JMenu jMenu1;
+    public javax.swing.JMenu jMenu2;
+    public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JTable jTable1;
+    public javax.swing.JLabel jl_backGround;
+    public javax.swing.JLabel jl_title;
+    public javax.swing.JMenuItem jmi_RFC;
+    public javax.swing.JMenuItem jmi_add;
+    public javax.swing.JMenuItem jmi_city;
+    public javax.swing.JMenuItem jmi_contact;
+    public javax.swing.JMenuItem jmi_email;
+    public javax.swing.JMenuItem jmi_hood;
+    public javax.swing.JMenuItem jmi_id;
+    public javax.swing.JMenuItem jmi_name;
+    public javax.swing.JMenuItem jmi_phone;
+    public javax.swing.JMenuItem jmi_state;
+    public javax.swing.JMenuItem jmi_streed;
     private javax.swing.JPanel jp_barckGround;
-    private javax.swing.JScrollPane jsc_table;
+    public javax.swing.JScrollPane jsc_table;
     // End of variables declaration//GEN-END:variables
 }
