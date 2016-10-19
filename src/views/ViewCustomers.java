@@ -5,19 +5,34 @@
  */
 package views;
 
+
+import javax.swing.table.DefaultTableModel;
+import jdda.ConnectionDB;
+
 /**
  *
  * @author panda
  */
 public class ViewCustomers extends javax.swing.JFrame {
-
+  /*  
+    private DefaultTableModel model;
+    ConnectionDB con = new ConnectionDB();
+*/
     /**
      * Creates new form ViewCustomers
      */
     public ViewCustomers() {
         initComponents();
     }
-
+    /*
+        public void carfarInterface(){
+        String data[][] = {};
+        String col[] = {"ID","Nombre","Apellido P","Apellido M","Contacto","Tel.","email"};
+        
+        model = new DefaultTableModel(data, col);
+        jt_infoCustomer.setModel(model);
+    }
+*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,34 +42,52 @@ public class ViewCustomers extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jbtn_edit = new javax.swing.JButton();
+        jbtn_delete = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_infoCustomer = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jm_search = new javax.swing.JMenu();
+        jmi_byName = new javax.swing.JMenuItem();
+        jmi_byState = new javax.swing.JMenuItem();
+        jmi_byNick = new javax.swing.JMenuItem();
+        jm_add = new javax.swing.JMenu();
+        jmi_newCustomer = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel1.setForeground(new java.awt.Color(255, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel2.setForeground(new java.awt.Color(255, 51, 51));
+        jPanel2.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Clientes");
+        jLabel4.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel4.setText("Infromación existente: ");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(20, 140, 210, 23);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
+        jbtn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_editActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jbtn_edit);
+        jbtn_edit.setBounds(140, 350, 80, 60);
+
+        jbtn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Borrar_trituradora.png"))); // NOI18N
+        jPanel2.add(jbtn_delete);
+        jbtn_delete.setBounds(50, 350, 83, 59);
+
+        jt_infoCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -65,104 +98,38 @@ public class ViewCustomers extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jt_infoCustomer);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Danni\\Desktop\\Borrar_trituradora.png")); // NOI18N
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 180, 380, 150);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Danni\\Desktop\\edit-validated_40458.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext.png"))); // NOI18N
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(-30, 20, 460, 80);
 
-        jLabel4.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Infromación existente: ");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/robin-batman-dc-comics-superhero-pics-161649.jpg"))); // NOI18N
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(-80, -60, 670, 500);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jm_search.setText("Buscar");
 
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel5.setText("Juan Daniel Dimas Amador");
+        jmi_byName.setText("Por Nombre...");
+        jm_search.add(jmi_byName);
 
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel6.setText("ACME SHOP");
+        jmi_byState.setText("Por Estado...");
+        jm_search.add(jmi_byState);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jmi_byNick.setText("Por Nombre de Contacto...");
+        jm_search.add(jmi_byNick);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(134, 134, 134)
-                            .addComponent(jLabel1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)))
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3))
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jMenuBar1.add(jm_search);
 
-        jMenu1.setText("Buscar");
+        jm_add.setText("Agregar");
 
-        jMenuItem2.setText("Por Nombre...");
-        jMenu1.add(jMenuItem2);
+        jmi_newCustomer.setText("Nuevo Cliente...");
+        jm_add.add(jmi_newCustomer);
 
-        jMenuItem3.setText("Por Estado...");
-        jMenu1.add(jMenuItem3);
-
-        jMenuItem4.setText("Por Nombre de Contacto...");
-        jMenu1.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Agregar");
-
-        jMenuItem1.setText("Nuevo Cliente...");
-        jMenu2.add(jMenuItem1);
-
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jm_add);
 
         setJMenuBar(jMenuBar1);
 
@@ -170,15 +137,26 @@ public class ViewCustomers extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+  //      carfarInterface();
+        //con.basicConsult("clientes", "id_cliente", "1");
+        
+    //    model.setValueAt(con.getColumn()[3], 2, 2);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void jbtn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_editActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,21 +195,19 @@ public class ViewCustomers extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JButton jbtn_delete;
+    public javax.swing.JButton jbtn_edit;
+    public javax.swing.JMenu jm_add;
+    public javax.swing.JMenu jm_search;
+    public javax.swing.JMenuItem jmi_byName;
+    public javax.swing.JMenuItem jmi_byNick;
+    public javax.swing.JMenuItem jmi_byState;
+    public javax.swing.JMenuItem jmi_newCustomer;
+    public javax.swing.JTable jt_infoCustomer;
     // End of variables declaration//GEN-END:variables
 }
