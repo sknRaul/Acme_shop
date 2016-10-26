@@ -15,12 +15,14 @@ public class ModelCustomersNewEdit {
     private String ap_pat;
     private String ap_ma;
     private String state;
+    private String Street;
     private String city;
     private String suburb;
     private int no;
     private String nick;
     private String number;
     private String email;
+    private String data;
 
     public String getName() {
         return name;
@@ -101,6 +103,34 @@ public class ModelCustomersNewEdit {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    /**
+     * @return the Street
+     */
+    public String getStreet() {
+        return Street;
+    }
+
+    /**
+     * @param Street the Street to set
+     */
+    public void setStreet(String Street) {
+        this.Street = Street;
+    }
+
+    /**
+     * @return the data
+     */
+    public String getData() {
+        return data;
+    }
+
+    /**
+     * @param data the data to set
+     */
+    public void setData(String data) {
+        this.data = data;
     }
 
 }

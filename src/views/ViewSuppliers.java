@@ -30,7 +30,9 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jp_barckGround = new javax.swing.JPanel();
         jl_title = new javax.swing.JLabel();
         jsc_table = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jt_suppliers = new javax.swing.JTable();
+        jbtn_edit = new javax.swing.JButton();
+        jbtn_delete = new javax.swing.JButton();
         jl_backGround = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -46,6 +48,8 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jmi_email = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jmi_add = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jmi_main = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,21 +61,31 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jp_barckGround.add(jl_title);
         jl_title.setBounds(70, 0, 420, 110);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jt_suppliers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Nombre", "RFC", "Calle", "Colonia", "Ciudad", "Estado", "Contacto", "Telefono", "E-mail"
+                "ID", "Nombre", "RFC", "Calle", "Colonia", "Ciudad", "Estado", "Contacto", "Telefono", "E-mail"
             }
         ));
-        jsc_table.setViewportView(jTable1);
+        jsc_table.setViewportView(jt_suppliers);
 
         jp_barckGround.add(jsc_table);
-        jsc_table.setBounds(10, 110, 500, 100);
+        jsc_table.setBounds(0, 110, 520, 190);
+
+        jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
+        jbtn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_editActionPerformed(evt);
+            }
+        });
+        jp_barckGround.add(jbtn_edit);
+        jbtn_edit.setBounds(290, 300, 80, 60);
+
+        jbtn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Borrar_trituradora.png"))); // NOI18N
+        jp_barckGround.add(jbtn_delete);
+        jbtn_delete.setBounds(120, 300, 83, 59);
 
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jl_backGround.setText("jLabel1");
@@ -119,6 +133,18 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("Revision");
+
+        jmi_main.setText("Principal");
+        jmi_main.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_mainActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jmi_main);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,6 +160,14 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmi_mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_mainActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_mainActionPerformed
+
+    private void jbtn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_editActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,8 +208,10 @@ public class ViewSuppliers extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenu jMenu1;
     public javax.swing.JMenu jMenu2;
+    public javax.swing.JMenu jMenu3;
     public javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JTable jTable1;
+    public javax.swing.JButton jbtn_delete;
+    public javax.swing.JButton jbtn_edit;
     public javax.swing.JLabel jl_backGround;
     public javax.swing.JLabel jl_title;
     public javax.swing.JMenuItem jmi_RFC;
@@ -185,11 +221,13 @@ public class ViewSuppliers extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_email;
     public javax.swing.JMenuItem jmi_hood;
     public javax.swing.JMenuItem jmi_id;
+    public javax.swing.JMenuItem jmi_main;
     public javax.swing.JMenuItem jmi_name;
     public javax.swing.JMenuItem jmi_phone;
     public javax.swing.JMenuItem jmi_state;
     public javax.swing.JMenuItem jmi_streed;
-    private javax.swing.JPanel jp_barckGround;
+    public javax.swing.JPanel jp_barckGround;
     public javax.swing.JScrollPane jsc_table;
+    public javax.swing.JTable jt_suppliers;
     // End of variables declaration//GEN-END:variables
 }

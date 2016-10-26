@@ -52,6 +52,7 @@ public class ViewCustomers extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_search = new javax.swing.JMenu();
+        jmi_byID = new javax.swing.JMenuItem();
         jmi_byName = new javax.swing.JMenuItem();
         jmi_byState = new javax.swing.JMenuItem();
         jmi_byNick = new javax.swing.JMenuItem();
@@ -101,7 +102,7 @@ public class ViewCustomers extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jt_infoCustomer);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 180, 380, 150);
+        jScrollPane2.setBounds(10, 180, 440, 150);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext.png"))); // NOI18N
         jPanel2.add(jLabel1);
@@ -109,9 +110,12 @@ public class ViewCustomers extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/robin-batman-dc-comics-superhero-pics-161649.jpg"))); // NOI18N
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(-80, -60, 670, 500);
+        jLabel2.setBounds(-10, 0, 670, 500);
 
         jm_search.setText("Buscar");
+
+        jmi_byID.setText("Por Número...");
+        jm_search.add(jmi_byID);
 
         jmi_byName.setText("Por Nombre...");
         jm_search.add(jmi_byName);
@@ -124,9 +128,9 @@ public class ViewCustomers extends javax.swing.JFrame {
 
         jMenuBar1.add(jm_search);
 
-        jm_add.setText("Agregar");
+        jm_add.setText("Nuevo");
 
-        jmi_newCustomer.setText("Nuevo Cliente...");
+        jmi_newCustomer.setText("Cliente...");
         jm_add.add(jmi_newCustomer);
 
         jMenuBar1.add(jm_add);
@@ -137,7 +141,7 @@ public class ViewCustomers extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,6 +208,7 @@ public class ViewCustomers extends javax.swing.JFrame {
     public javax.swing.JButton jbtn_edit;
     public javax.swing.JMenu jm_add;
     public javax.swing.JMenu jm_search;
+    public javax.swing.JMenuItem jmi_byID;
     public javax.swing.JMenuItem jmi_byName;
     public javax.swing.JMenuItem jmi_byNick;
     public javax.swing.JMenuItem jmi_byState;

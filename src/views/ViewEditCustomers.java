@@ -179,7 +179,7 @@ public class ViewEditCustomers extends javax.swing.JPanel {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/16047575-duotone-red-yellow-pop-art-polka-dot-dotted-pattern.jpg"))); // NOI18N
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(0, -80, 520, 570);
+        jLabel14.setBounds(0, -80, 560, 570);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

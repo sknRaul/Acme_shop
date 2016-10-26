@@ -7,7 +7,7 @@ package models;
 
 /**
  *
- * @author panda
+ * @author Danni
  */
 public class ModelCustomers {
     

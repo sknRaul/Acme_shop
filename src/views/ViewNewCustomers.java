@@ -198,7 +198,7 @@ public class ViewNewCustomers extends javax.swing.JPanel {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/explosion-vector-art_00435654.jpg"))); // NOI18N
         add(jLabel14);
-        jLabel14.setBounds(0, -40, 532, 520);
+        jLabel14.setBounds(0, -40, 610, 560);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nickActionPerformed

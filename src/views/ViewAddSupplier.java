@@ -40,10 +40,9 @@ public class ViewAddSupplier extends javax.swing.JPanel {
         jtf_hood = new javax.swing.JTextField();
         jtf_city = new javax.swing.JTextField();
         jl_city = new javax.swing.JLabel();
-        jtf_state = new javax.swing.JTextField();
-        jl_state = new javax.swing.JLabel();
         jtf_contact = new javax.swing.JTextField();
         jl_contact = new javax.swing.JLabel();
+        jcb_state = new javax.swing.JComboBox<>();
         jbtn_sent = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jtf_phone = new javax.swing.JTextField();
@@ -90,11 +89,6 @@ public class ViewAddSupplier extends javax.swing.JPanel {
         jl_city.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_city.setText("Ciudad");
 
-        jtf_state.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-
-        jl_state.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jl_state.setText("Estado");
-
         jtf_contact.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_contact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +98,13 @@ public class ViewAddSupplier extends javax.swing.JPanel {
 
         jl_contact.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_contact.setText("Contacto");
+
+        jcb_state.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "CDMX", "Coahuila", "Colima", "Chiapas", "Chihuahua", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "México", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" }));
+        jcb_state.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_stateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_ContainerLayout = new javax.swing.GroupLayout(jp_Container);
         jp_Container.setLayout(jp_ContainerLayout);
@@ -126,16 +127,13 @@ public class ViewAddSupplier extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addComponent(jtf_hood))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ContainerLayout.createSequentialGroup()
+                                .addComponent(jl_contact)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jl_state)
-                                    .addComponent(jl_contact))
-                                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtf_contact)
                                     .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jtf_state, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jtf_contact)))))
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jcb_state, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap())
                     .addGroup(jp_ContainerLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -178,10 +176,8 @@ public class ViewAddSupplier extends javax.swing.JPanel {
                     .addComponent(jl_city)
                     .addComponent(jtf_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_state)
-                    .addComponent(jtf_state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jcb_state, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_contact)
                     .addComponent(jtf_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,31 +263,34 @@ public class ViewAddSupplier extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_contactActionPerformed
 
+    private void jcb_stateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_stateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb_stateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton jbtn_sent;
-    private javax.swing.JLabel jl_RFC;
-    private javax.swing.JLabel jl_Streed;
-    private javax.swing.JLabel jl_backGround;
-    private javax.swing.JLabel jl_city;
-    private javax.swing.JLabel jl_contact;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JButton jbtn_sent;
+    public javax.swing.JComboBox<String> jcb_state;
+    public javax.swing.JLabel jl_RFC;
+    public javax.swing.JLabel jl_Streed;
+    public javax.swing.JLabel jl_backGround;
+    public javax.swing.JLabel jl_city;
+    public javax.swing.JLabel jl_contact;
     private javax.swing.JLabel jl_email;
-    private javax.swing.JLabel jl_hood;
-    private javax.swing.JLabel jl_name;
+    public javax.swing.JLabel jl_hood;
+    public javax.swing.JLabel jl_name;
     private javax.swing.JLabel jl_phone;
-    private javax.swing.JLabel jl_state;
-    private javax.swing.JLabel jl_titleEdit;
-    private javax.swing.JPanel jp_Container;
-    private javax.swing.JTextField jtf_RFC;
-    private javax.swing.JTextField jtf_city;
-    private javax.swing.JTextField jtf_contact;
-    private javax.swing.JTextField jtf_email;
-    private javax.swing.JTextField jtf_hood;
-    private javax.swing.JTextField jtf_name;
-    private javax.swing.JTextField jtf_phone;
-    private javax.swing.JTextField jtf_state;
-    private javax.swing.JTextField jtf_streed;
+    public javax.swing.JLabel jl_titleEdit;
+    public javax.swing.JPanel jp_Container;
+    public javax.swing.JTextField jtf_RFC;
+    public javax.swing.JTextField jtf_city;
+    public javax.swing.JTextField jtf_contact;
+    public javax.swing.JTextField jtf_email;
+    public javax.swing.JTextField jtf_hood;
+    public javax.swing.JTextField jtf_name;
+    public javax.swing.JTextField jtf_phone;
+    public javax.swing.JTextField jtf_streed;
     // End of variables declaration//GEN-END:variables
 }

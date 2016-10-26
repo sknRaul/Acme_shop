@@ -1,43 +1,58 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controls;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import jdda.ConnectionDB;
+import jdda.*;
 import views.ViewCustomers;
-import models.ModelCustomers;
-
+import models.ModelCustomersNewEdit;
 
 /**
  *
- * @author panda
+ * @author Danni
  */
+
 public class ControlCustomers implements ActionListener {
     ConnectionDB con = new ConnectionDB();
+    
+    
+    private Connection conexion;
+    private Statement st;
+    private ResultSet rs;
+    Object [] fila = new Object[8];
+        
     JPanel [] views;
+    
     private DefaultTableModel model;
     
-    ModelCustomers modelCustomers;
+    ModelCustomersNewEdit modelCustomersNewEdit;
     ViewCustomers viewCustomers;
     
-    public ControlCustomers(ModelCustomers modelCustomers, ViewCustomers viewCustomers, JPanel[] views){
+    public ControlCustomers(ModelCustomersNewEdit modelCustomersNewEdit, ViewCustomers viewCustomers, JPanel[] views){
         
-        this.modelCustomers = modelCustomers;
+        this.modelCustomersNewEdit = modelCustomersNewEdit;
         this.viewCustomers = viewCustomers;
         this.views = views;
+        conexion = con.Connection("acme_shop", "root", "");
+        try{
+            st = conexion.createStatement();
+        }catch(SQLException esql){
+            System.out.println("Error"+esql.getMessage());
+        }
         
         this.viewCustomers.jbtn_edit.addActionListener(this);
-        this.viewCustomers.jbtn_edit.addActionListener(this);
+        this.viewCustomers.jbtn_delete.addActionListener(this);
         this.viewCustomers.jm_add.addActionListener(this);
         this.viewCustomers.jm_search.addActionListener(this);
         this.viewCustomers.jmi_byName.addActionListener(this);
         this.viewCustomers.jmi_byNick.addActionListener(this);
         this.viewCustomers.jmi_byState.addActionListener(this);
+        this.viewCustomers.jmi_byID.addActionListener(this);
         this.viewCustomers.jmi_newCustomer.addActionListener(this);
         
         initView();
@@ -48,22 +63,90 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.setVisible(true);
         this.viewCustomers.setResizable(false);
         this.viewCustomers.setTitle("Clientes");
-        con.Connection("acme_shop", "root", "");
-        carfarInterface();
-        traerDatos();
-    }
+        //cargarInterface();
+        cargarInterface();
+        cargarTabla();
+    }       
     
-    public void carfarInterface(){
+    public void cargarInterface(){
         String data[][] = {};
-        String col[] = {"NO.","Nombre","Apellido P.","Apellido M.","Contacto"};
+        String col[] = {"No.","Nombre","A. Paterno","A. Materno","Estado","Contacto","Teléfono","E-mail"};
         model = new DefaultTableModel(data, col);
+        //con.basicConsult("clientes", "id_cliente", "1");
+        //llenarFilas();
         this.viewCustomers.jt_infoCustomer.setModel(model);
     }
     
-    public void traerDatos(){
-        con.basicConsult("clientes", "id", "1");
-        for(int i=0;i<12;i++){
-            System.out.println(con.getColumn()[i]);
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource().equals(this.viewCustomers.jmi_newCustomer)){
+            jmiAddActionPerformed();
+        }else if(ae.getSource().equals(this.viewCustomers.jbtn_edit)){
+            jbtnEditActionPerformed();
+        }else if(ae.getSource().equals(this.viewCustomers.jmi_byName)){
+            jmiByName();
+        }else if(ae.getSource().equals(this.viewCustomers.jmi_byNick)){
+            jmiByNick();
+        }else if(ae.getSource().equals(this.viewCustomers.jmi_byState)){
+            jmiByState();
+        }else if(ae.getSource().equals(this.viewCustomers.jmi_byID)){
+            jmiByID();
+        }else if(ae.getSource().equals(this.viewCustomers.jbtn_delete)){
+            jbtnDeleteActionPerformed();
+        }
+
+    }
+    
+    public void llenarFilas(){
+        fila[0] = con.getColumn()[0];
+        fila[1] = con.getColumn()[1];
+        fila[2] = con.getColumn()[2];
+        fila[3] = con.getColumn()[3];
+        fila[4] = con.getColumn()[8];
+        fila[5] = con.getColumn()[9];
+        fila[6] = con.getColumn()[10];
+        fila[7] = con.getColumn()[11];
+        model.addRow(fila);
+    }
+    
+    public void cargarTabla(){
+        
+        try{
+            st = conexion.createStatement();
+            rs = st.executeQuery("SELECT * FROM clientes");
+            
+            String prueba[] = new String[12];
+            
+        while(rs.next()){
+            prueba[0] = rs.getString(1);
+            prueba[1] = rs.getString(2);
+            prueba[2] = rs.getString(3);
+            prueba[3] = rs.getString(4);
+            prueba[4] = rs.getString(5);
+            prueba[5] = rs.getString(6);
+            prueba[6] = rs.getString(7);
+            prueba[7] = rs.getString(8);
+            prueba[8] = rs.getString(9);
+            prueba[9] = rs.getString(10);
+            prueba[10] = rs.getString(11);
+            prueba[11] = rs.getString(12);
+            fila[0] = prueba[0];
+            fila[1] = prueba[1];
+            fila[2] = prueba[2];
+            fila[3] = prueba[3];
+            fila[4] = prueba[8];
+            fila[5] = prueba[9];
+            fila[6] = prueba[10];
+            fila[7] = prueba[11];
+            model.addRow(fila);
+        }
+    
+
+        
+        System.out.println(fila[0]);   
+        this.viewCustomers.jt_infoCustomer.setModel(model);
+        }catch(SQLException e){
+            System.out.println("No "+e.getMessage());
         }
     }
     
@@ -73,18 +156,43 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.repaint();
     }    
     
-    public void jbtnEditActionPerformed(){
+    public void jbtnEditActionPerformed(){   
         this.viewCustomers.setContentPane(views[1]);
         this.viewCustomers.revalidate();
         this.viewCustomers.repaint();
     }
     
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource().equals(this.viewCustomers.jmi_newCustomer))
-            jmiAddActionPerformed();
-        else if(ae.getSource().equals(this.viewCustomers.jbtn_edit))
-            jbtnEditActionPerformed();
+    public void jmiByName(){
+         this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el nombre del cliente."));
+        con.basicConsult("clientes", "nombre",this.modelCustomersNewEdit.getData());
+        llenarFilas();        
+    }
+    
+    public void jmiByID(){
+        this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el ID del cliente."));
+        con.basicConsult("clientes", "id_cliente", this.modelCustomersNewEdit.getData());
+        llenarFilas();
+    }
+    
+    public void jmiByState(){
+        this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el Estado del cliente."));
+        con.basicConsult("clientes", "estado", this.modelCustomersNewEdit.getData());
+        llenarFilas();
+    }
+    
+    public void jmiByNick(){
+        this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el Contacto del cliente."));
+        con.basicConsult("clientes", "nombre_contacto", this.modelCustomersNewEdit.getData());
+        llenarFilas();
+    }
+    
+    public void jbtnDeleteActionPerformed(){
+        try{
+            st.executeUpdate("DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = "+this.modelCustomersNewEdit.getData()+"");
+            System.out.println("Listo");
+        }catch(SQLException e){
+            System.out.println("NOOOO"+ e.getMessage());
+        }
     }
     
 }

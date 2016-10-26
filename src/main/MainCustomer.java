@@ -33,7 +33,7 @@ public class MainCustomer {
         controlCustomerEdit = new ControlCustomersEdit(modelCustomersNewEdit, viewEditCustomer);
         
         viewNewCustomer = new ViewNewCustomers();
-        controlCustomersNew = new ControlCustomersNew();
+        controlCustomersNew = new ControlCustomersNew(modelCustomersNewEdit, viewNewCustomer);
                 
         viewCustomers = new ViewCustomers();
         modelCustomers = new ModelCustomers();
@@ -42,7 +42,7 @@ public class MainCustomer {
         views[0] = viewNewCustomer;
         views[1] = viewEditCustomer;
 
-        controlCustomers = new ControlCustomers(modelCustomers, viewCustomers, views);
+        controlCustomers = new ControlCustomers(modelCustomersNewEdit, viewCustomers, views);
 
     }
 }
