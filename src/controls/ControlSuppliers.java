@@ -23,12 +23,17 @@ public class ControlSuppliers implements ActionListener {
     private ConnectionDB cb = new ConnectionDB();
     private ModelSuppliers modelSuppliers;
     private ViewSuppliers viewSuppliers;
-    JPanel views[] = new JPanel[2];
+    private Object controls[] = new Object[2];
+    ControlAddSupplier cas;
+    ControlEditSuppliers ces;
     
-    public ControlSuppliers(ModelSuppliers modelSuppliers, ViewSuppliers viewSuppliers,JPanel views[]){
-        this.views = views;
+    public ControlSuppliers(ModelSuppliers modelSuppliers, ViewSuppliers viewSuppliers,Object controls[]){
+        this.controls = controls;
         this.modelSuppliers = modelSuppliers;
         this.viewSuppliers = viewSuppliers;
+        
+        cas = (ControlAddSupplier) controls[0];
+        ces = (ControlEditSuppliers) controls[1];
         
         inView();
         
@@ -56,7 +61,7 @@ public class ControlSuppliers implements ActionListener {
     }
     
     public void add(){
-        this.viewSuppliers.setContentPane(views[0]);
+        this.viewSuppliers.setContentPane(cas.vas);
         this.viewSuppliers.revalidate();
         this.viewSuppliers.repaint();
         this.viewSuppliers.pack();
@@ -86,14 +91,15 @@ public class ControlSuppliers implements ActionListener {
     }
     
     public void edit(){
-        this.viewSuppliers.setContentPane(views[1]);
+        this.viewSuppliers.setContentPane(ces.ves);
         this.viewSuppliers.revalidate();
         this.viewSuppliers.repaint();
         this.viewSuppliers.pack();
         
         int row = this.viewSuppliers.jt_suppliers.getSelectedRow();
         int editer = (int)this.viewSuppliers.jt_suppliers.getValueAt(row, 0);
-        this.modelSuppliers.setEditer(editer);
+        this.ces.mas.setEditer(editer);
+        this.ces.showEditableData();
     }
     
     public void clean(){
@@ -160,9 +166,6 @@ public class ControlSuppliers implements ActionListener {
             seach("telefono","el telefono");
         else if(ae.getSource() == this.viewSuppliers.jmi_email)
             seach("email","el email");
-        
-        
-        
     }
     
 }

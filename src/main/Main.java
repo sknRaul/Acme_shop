@@ -7,7 +7,6 @@ package main;
 import controls.*;
 import models.*;
 import views.*;
-import javax.swing.JPanel;
 /**
  *
  * @author panda
@@ -22,12 +21,12 @@ public class Main {
         ModelSuppliers mes = new ModelSuppliers();
         ControlEditSuppliers ces = new ControlEditSuppliers(mes, ves);
         
-        JPanel views[] = new JPanel[2];
-        views[0] = vas;
-        views[1] = ves;
+        Object controls[] = new Object[2];
+        controls[0] = cas;
+        controls[1] = ces;
         
         ViewSuppliers vs = new ViewSuppliers();
         ModelSuppliers ms = new ModelSuppliers();
-        ControlSuppliers cs = new ControlSuppliers(mes, vs, views);
+        ControlSuppliers cs = new ControlSuppliers(mes, vs, controls);
     }
 }
