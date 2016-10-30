@@ -52,6 +52,7 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jmi_main = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jp_barckGround.setLayout(null);
 

@@ -25,7 +25,7 @@ public class ControlCustomersEdit implements ActionListener {
     public ControlCustomersEdit(ModelCustomersNewEdit modelCustomersNewEdit, ViewEditCustomers viewEditCustomer){
         this.modelCustomersNewEdit = modelCustomersNewEdit;
         this.viewEditCustomer = viewEditCustomer;
-        conexion = conDB.Connection("acme_shop", "root", "");
+        conexion = conDB.Connection("acme_shop", "root", "1234");
         
         try{
             st = conexion.createStatement();

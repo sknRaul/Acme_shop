@@ -32,7 +32,7 @@ public class ControlCustomersNew implements ActionListener{
     public ControlCustomersNew(ModelCustomersNewEdit modelCustomersNewEdit, ViewNewCustomers viewNewCustomers){
         this.modelCustomersNewEdit = modelCustomersNewEdit;
         this.viewNewCustomers = viewNewCustomers;
-        conexion = conDB.Connection("acme_shop", "root", "");
+        conexion = conDB.Connection("acme_shop", "root", "1234");
         try{
             st = conexion.createStatement();
         }catch(SQLException esql){

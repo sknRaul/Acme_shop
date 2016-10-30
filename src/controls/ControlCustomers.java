@@ -38,7 +38,7 @@ public class ControlCustomers implements ActionListener {
         this.modelCustomersNewEdit = modelCustomersNewEdit;
         this.viewCustomers = viewCustomers;
         this.views = views;
-        conexion = con.Connection("acme_shop", "root", "");
+        conexion = con.Connection("acme_shop", "root", "1234");
         try{
             st = conexion.createStatement();
         }catch(SQLException esql){
@@ -55,10 +55,10 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.jmi_byID.addActionListener(this);
         this.viewCustomers.jmi_newCustomer.addActionListener(this);
         
-        initView();
+        inView();
     }
     
-    private void initView(){
+    private void inView(){
         this.viewCustomers.setLocationRelativeTo(null);
         this.viewCustomers.setVisible(true);
         this.viewCustomers.setResizable(false);

@@ -29,19 +29,24 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmi_suppliers = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jmi_Customers = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Buscar");
+        jMenu1.setText("Proveedores");
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenu1.add(jMenuItem1);
+        jmi_suppliers.setText("Proveedores");
+        jMenu1.add(jmi_suppliers);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Agregar");
+        jMenu2.setText("Clientes");
+
+        jmi_Customers.setText("Clientes");
+        jMenu2.add(jmi_Customers);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -59,6 +64,10 @@ public class ViewMain extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,6 +108,7 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jmi_Customers;
+    public javax.swing.JMenuItem jmi_suppliers;
     // End of variables declaration//GEN-END:variables
 }
