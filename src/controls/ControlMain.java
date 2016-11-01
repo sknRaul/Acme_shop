@@ -31,6 +31,7 @@ public class ControlMain implements ActionListener{
         
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
+        this.cs.viewSuppliers.jbtn_back.addActionListener(this);
     }
     
     public void inView(){
@@ -49,17 +50,13 @@ public class ControlMain implements ActionListener{
         cc.inView();
     }
     
-    public void windows(){
-        if (cs.backMain()) {
-            inView();
-        }
-    }
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.viewMain.jmi_suppliers)
             suppliers();
         else if(e.getSource() == this.viewMain.jmi_Customers)
             customers();
+        else if(e.getSource() == this.cs.viewSuppliers.jbtn_back)
+            inView();
     }
 }

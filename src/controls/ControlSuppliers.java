@@ -22,7 +22,7 @@ public class ControlSuppliers implements ActionListener {
     private ResultSet rs = null;
     private ConnectionDB cb = new ConnectionDB();
     private ModelSuppliers modelSuppliers;
-    private ViewSuppliers viewSuppliers;
+    public ViewSuppliers viewSuppliers;
     private Object controls[] = new Object[2];
     ControlAddSupplier cas;
     ControlEditSuppliers ces;
