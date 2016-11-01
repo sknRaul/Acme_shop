@@ -70,6 +70,7 @@ public class ControlSuppliers implements ActionListener {
         this.viewSuppliers.setContentPane(this.viewSuppliers.jp_barckGround);
         this.viewSuppliers.revalidate();
         this.viewSuppliers.repaint();
+        this.viewSuppliers.setSize(this.viewSuppliers.getSize());
         clean();
         showData("Select * from provedores");
     }
@@ -133,11 +134,6 @@ public class ControlSuppliers implements ActionListener {
             System.err.println("Error en ControlSupliers metodo seach");
         }
     }
-    
-    public boolean backMain(){
-        this.viewSuppliers.setVisible(false);
-        return true;
-    }
             
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -170,7 +166,7 @@ public class ControlSuppliers implements ActionListener {
         else if(ae.getSource() == this.viewSuppliers.jmi_email)
             seach("email","el email");
         else if(ae.getSource() == this.viewSuppliers.jbtn_back)
-            backMain();
+            this.viewSuppliers.setVisible(false);
     }
     
 }

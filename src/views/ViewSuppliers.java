@@ -98,7 +98,7 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jl_backGround.setText("jLabel1");
         jp_barckGround.add(jl_backGround);
-        jl_backGround.setBounds(-130, 0, 980, 520);
+        jl_backGround.setBounds(-130, 0, 980, 480);
 
         jMenu1.setText("Buscar");
 
@@ -159,11 +159,11 @@ public class ViewSuppliers extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_barckGround, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
+            .addComponent(jp_barckGround, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_barckGround, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jp_barckGround, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

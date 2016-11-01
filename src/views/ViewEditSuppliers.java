@@ -44,12 +44,11 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
         jtf_contact = new javax.swing.JTextField();
         jl_contact = new javax.swing.JLabel();
         jcb_states = new javax.swing.JComboBox<>();
-        jbtn_sent = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jtf_phone = new javax.swing.JTextField();
         jl_phone = new javax.swing.JLabel();
+        jtf_phone = new javax.swing.JTextField();
         jtf_email = new javax.swing.JTextField();
         jl_email = new javax.swing.JLabel();
+        jbtn_sent = new javax.swing.JButton();
         jl_backGround = new javax.swing.JLabel();
 
         jPanel1.setLayout(null);
@@ -110,6 +109,16 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
             }
         });
 
+        jl_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jl_phone.setText("Telefono");
+
+        jtf_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+
+        jtf_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+
+        jl_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jl_email.setText("E-mail");
+
         javax.swing.GroupLayout jp_ContainerLayout = new javax.swing.GroupLayout(jp_Container);
         jp_Container.setLayout(jp_ContainerLayout);
         jp_ContainerLayout.setHorizontalGroup(
@@ -119,42 +128,42 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_ContainerLayout.createSequentialGroup()
                         .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jl_hood)
-                                    .addComponent(jl_city))
-                                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jtf_hood))
-                                    .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                        .addGap(43, 43, 43)
-                                        .addComponent(jtf_city))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ContainerLayout.createSequentialGroup()
-                                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jl_state)
-                                    .addComponent(jl_contact))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtf_contact)
-                                    .addComponent(jcb_states, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap())
-                    .addGroup(jp_ContainerLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(jl_hood)
+                            .addComponent(jl_city))
                         .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ContainerLayout.createSequentialGroup()
-                                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jl_name)
-                                    .addComponent(jl_RFC))
-                                .addGap(15, 15, 15))
                             .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                .addComponent(jl_Streed)
-                                .addGap(38, 38, 38)))
-                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtf_streed, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_RFC, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_name, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jtf_hood))
+                            .addGroup(jp_ContainerLayout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(jtf_city))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ContainerLayout.createSequentialGroup()
+                        .addComponent(jl_state)
+                        .addGap(25, 25, 25)
+                        .addComponent(jcb_states, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jp_ContainerLayout.createSequentialGroup()
+                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_name)
+                            .addComponent(jl_RFC)
+                            .addComponent(jl_Streed))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtf_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_RFC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_streed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jp_ContainerLayout.createSequentialGroup()
+                        .addComponent(jl_contact)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_contact))
+                    .addGroup(jp_ContainerLayout.createSequentialGroup()
+                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_phone)
+                            .addComponent(jl_email))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtf_email)
+                            .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         jp_ContainerLayout.setVerticalGroup(
             jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,81 +192,43 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_state)
                     .addComponent(jcb_states, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_contact)
                     .addComponent(jtf_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_phone)
+                    .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_email)
+                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jp_Container);
-        jp_Container.setBounds(10, 80, 250, 290);
+        jp_Container.setBounds(10, 80, 310, 400);
 
         jbtn_sent.setBackground(new java.awt.Color(204, 204, 0));
         jbtn_sent.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jbtn_sent.setText("Enviar");
         jPanel1.add(jbtn_sent);
-        jbtn_sent.setBounds(320, 230, 110, 40);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jtf_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-
-        jl_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jl_phone.setText("Telefono");
-
-        jtf_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-
-        jl_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jl_email.setText("E-mail");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_phone)
-                    .addComponent(jl_email))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtf_email, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(jtf_phone))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_phone)
-                    .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_email)
-                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(280, 100, 270, 90);
+        jbtn_sent.setBounds(340, 170, 110, 40);
 
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jPanel1.add(jl_backGround);
-        jl_backGround.setBounds(0, 0, 600, 380);
+        jl_backGround.setBounds(-280, -30, 1010, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -276,7 +247,6 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
     public javax.swing.JButton jbtn_sent;
     public javax.swing.JComboBox<String> jcb_states;
     public javax.swing.JLabel jl_RFC;
