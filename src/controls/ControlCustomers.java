@@ -54,11 +54,9 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.jmi_byState.addActionListener(this);
         this.viewCustomers.jmi_byID.addActionListener(this);
         this.viewCustomers.jmi_newCustomer.addActionListener(this);
-        
-        inView();
     }
     
-    private void inView(){
+    public void inView(){
         this.viewCustomers.setLocationRelativeTo(null);
         this.viewCustomers.setVisible(true);
         this.viewCustomers.setResizable(false);

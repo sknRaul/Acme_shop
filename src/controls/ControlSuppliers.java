@@ -35,8 +35,7 @@ public class ControlSuppliers implements ActionListener {
         cas = (ControlAddSupplier) controls[0];
         ces = (ControlEditSuppliers) controls[1];
         
-        inView();
-        
+        this.viewSuppliers.jbtn_back.addActionListener(this);
         this.viewSuppliers.jmi_add.addActionListener(this);
         this.viewSuppliers.jmi_main.addActionListener(this);
         this.viewSuppliers.jbtn_delete.addActionListener(this);
@@ -133,7 +132,11 @@ public class ControlSuppliers implements ActionListener {
         } catch (Exception e) {
             System.err.println("Error en ControlSupliers metodo seach");
         }
-        
+    }
+    
+    public boolean backMain(){
+        this.viewSuppliers.setVisible(false);
+        return true;
     }
             
     @Override
@@ -166,6 +169,8 @@ public class ControlSuppliers implements ActionListener {
             seach("telefono","el telefono");
         else if(ae.getSource() == this.viewSuppliers.jmi_email)
             seach("email","el email");
+        else if(ae.getSource() == this.viewSuppliers.jbtn_back)
+            backMain();
     }
     
 }

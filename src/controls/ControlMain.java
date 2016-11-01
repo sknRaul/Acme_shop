@@ -46,7 +46,13 @@ public class ControlMain implements ActionListener{
     
     public void customers(){
         this.viewMain.setVisible(false);
-        cc.viewCustomers.setVisible(true);
+        cc.inView();
+    }
+    
+    public void windows(){
+        if (cs.backMain()) {
+            inView();
+        }
     }
     
     @Override

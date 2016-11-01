@@ -28,6 +28,7 @@ public class ViewSuppliers extends javax.swing.JFrame {
     private void initComponents() {
 
         jp_barckGround = new javax.swing.JPanel();
+        jbtn_back = new javax.swing.JButton();
         jl_title = new javax.swing.JLabel();
         jsc_table = new javax.swing.JScrollPane();
         jt_suppliers = new javax.swing.JTable();
@@ -56,11 +57,17 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         jp_barckGround.setLayout(null);
 
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.jpg"))); // NOI18N
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        jp_barckGround.add(jbtn_back);
+        jbtn_back.setBounds(50, 30, 50, 50);
+
         jl_title.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         jl_title.setForeground(new java.awt.Color(0, 102, 102));
         jl_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/title_suppliers.png"))); // NOI18N
         jp_barckGround.add(jl_title);
-        jl_title.setBounds(70, 0, 420, 110);
+        jl_title.setBounds(200, 10, 420, 110);
 
         jt_suppliers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,7 +80,7 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jsc_table.setViewportView(jt_suppliers);
 
         jp_barckGround.add(jsc_table);
-        jsc_table.setBounds(0, 110, 520, 190);
+        jsc_table.setBounds(10, 130, 630, 220);
 
         jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
         jbtn_edit.addActionListener(new java.awt.event.ActionListener() {
@@ -82,16 +89,16 @@ public class ViewSuppliers extends javax.swing.JFrame {
             }
         });
         jp_barckGround.add(jbtn_edit);
-        jbtn_edit.setBounds(290, 300, 80, 60);
+        jbtn_edit.setBounds(340, 370, 80, 60);
 
         jbtn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Borrar_trituradora.png"))); // NOI18N
         jp_barckGround.add(jbtn_delete);
-        jbtn_delete.setBounds(120, 300, 83, 59);
+        jbtn_delete.setBounds(130, 380, 83, 59);
 
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jl_backGround.setText("jLabel1");
         jp_barckGround.add(jl_backGround);
-        jl_backGround.setBounds(0, 0, 600, 360);
+        jl_backGround.setBounds(-130, 0, 980, 520);
 
         jMenu1.setText("Buscar");
 
@@ -152,11 +159,11 @@ public class ViewSuppliers extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_barckGround, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jp_barckGround, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_barckGround, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jp_barckGround, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -197,6 +204,12 @@ public class ViewSuppliers extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -211,6 +224,7 @@ public class ViewSuppliers extends javax.swing.JFrame {
     public javax.swing.JMenu jMenu2;
     public javax.swing.JMenu jMenu3;
     public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_delete;
     public javax.swing.JButton jbtn_edit;
     public javax.swing.JLabel jl_backGround;
