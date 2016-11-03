@@ -23,6 +23,7 @@ public class ModelCustomersNewEdit {
     private String number;
     private String email;
     private String data;
+    private Object editableValues;
 
     public String getName() {
         return name;
@@ -131,6 +132,20 @@ public class ModelCustomersNewEdit {
      */
     public void setData(String data) {
         this.data = data;
+    }
+
+    /**
+     * @param editableValues the editableValues to set
+     */
+    public void setEditableValues(Object editableValues) {
+        this.editableValues = editableValues;
+    }
+
+    /**
+     * @return the editableValues
+     */
+    public Object getEditableValues() {
+        return editableValues;
     }
 
 }

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import jdda.*;
-import views.ViewCustomers;
+import views.*;
 import models.ModelCustomersNewEdit;
 
 /**
@@ -19,7 +19,6 @@ import models.ModelCustomersNewEdit;
 
 public class ControlCustomers implements ActionListener {
     ConnectionDB con = new ConnectionDB();
-    
     
     private Connection conexion;
     private Statement st;
@@ -32,7 +31,7 @@ public class ControlCustomers implements ActionListener {
     
     ModelCustomersNewEdit modelCustomersNewEdit;
     ViewCustomers viewCustomers;
-    
+   
     public ControlCustomers(ModelCustomersNewEdit modelCustomersNewEdit, ViewCustomers viewCustomers, JPanel[] views){
         
         this.modelCustomersNewEdit = modelCustomersNewEdit;
@@ -53,13 +52,15 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.jmi_byNick.addActionListener(this);
         this.viewCustomers.jmi_byState.addActionListener(this);
         this.viewCustomers.jmi_byID.addActionListener(this);
+        this.viewCustomers.jmi_sales.addActionListener(this);
         this.viewCustomers.jmi_newCustomer.addActionListener(this);
+        this.viewCustomers.jmi_comeBack.addActionListener(this);
     }
     
     public void inView(){
         this.viewCustomers.setLocationRelativeTo(null);
         this.viewCustomers.setVisible(true);
-        this.viewCustomers.setResizable(false);
+        this.viewCustomers.setResizable(true);
         this.viewCustomers.setTitle("Clientes");
         //cargarInterface();
         cargarInterface();
@@ -75,6 +76,7 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.jt_infoCustomer.setModel(model);
     }
     
+
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource().equals(this.viewCustomers.jmi_newCustomer)){
@@ -91,8 +93,19 @@ public class ControlCustomers implements ActionListener {
             jmiByID();
         }else if(ae.getSource().equals(this.viewCustomers.jbtn_delete)){
             jbtnDeleteActionPerformed();
+        }else if(ae.getSource().equals(this.viewCustomers.jmi_comeBack)){
+            back();
+        }else if(ae.getSource().equals(this.viewCustomers.jmi_sales)){
+            jmiSalesActionPerformed();
         }
-
+    }
+    
+    public void back(){
+        this.viewCustomers.setContentPane(this.viewCustomers.jp_backGround);
+        this.viewCustomers.revalidate();
+        this.viewCustomers.repaint();
+        this.viewCustomers.setSize(this.viewCustomers.getSize());
+        inView();
     }
     
     public void llenarFilas(){
@@ -138,15 +151,13 @@ public class ControlCustomers implements ActionListener {
             fila[7] = prueba[11];
             model.addRow(fila);
         }
-    
-
-        
-        System.out.println(fila[0]);   
+   
         this.viewCustomers.jt_infoCustomer.setModel(model);
         }catch(SQLException e){
             System.out.println("No "+e.getMessage());
         }
     }
+    
     
     public void jmiAddActionPerformed(){
         this.viewCustomers.setContentPane(views[0]);
@@ -158,10 +169,25 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.setContentPane(views[1]);
         this.viewCustomers.revalidate();
         this.viewCustomers.repaint();
+        int row = this.viewCustomers.jt_infoCustomer.getSelectedRow();
+        try{
+            this.modelCustomersNewEdit.setEditableValues(this.viewCustomers.jt_infoCustomer.getValueAt(row, 0));            
+        }catch(Exception e){
+            System.out.println("NO se que pasa: "+ e.getMessage());
+        }
+    }
+    
+    public void jmiSalesActionPerformed(){
+        this.viewCustomers.setContentPane(views[2]);
+        this.viewCustomers.revalidate();
+        this.viewCustomers.repaint();
+        //this.viewCustomers.pack();
+        this.viewCustomers.setSize(this.viewCustomers.getSize());
+        
     }
     
     public void jmiByName(){
-         this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el nombre del cliente."));
+        this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el nombre del cliente."));
         con.basicConsult("clientes", "nombre",this.modelCustomersNewEdit.getData());
         llenarFilas();        
     }
@@ -185,8 +211,10 @@ public class ControlCustomers implements ActionListener {
     }
     
     public void jbtnDeleteActionPerformed(){
+        int row = this.viewCustomers.jt_infoCustomer.getSelectedRow();
         try{
-            st.executeUpdate("DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = "+this.modelCustomersNewEdit.getData()+"");
+            this.modelCustomersNewEdit.setEditableValues(this.viewCustomers.jt_infoCustomer.getValueAt(row, 0));            
+            st.executeUpdate("DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = "+this.modelCustomersNewEdit.getEditableValues()+"");
             System.out.println("Listo");
         }catch(SQLException e){
             System.out.println("NOOOO"+ e.getMessage());

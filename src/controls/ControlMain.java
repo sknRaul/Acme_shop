@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controls;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import views.ViewMain;
@@ -18,6 +19,7 @@ public class ControlMain implements ActionListener{
     private Object controls[];
     ControlSuppliers cs;
     ControlCustomers cc;
+    ControlSales cSales;
     
     public ControlMain(ModelMain modelMain, ViewMain viewMain, Object controls[]){
         this.viewMain = viewMain;
@@ -31,6 +33,7 @@ public class ControlMain implements ActionListener{
         
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
+        this.viewMain.jmi_sales.addActionListener(this);
         this.cs.viewSuppliers.jbtn_back.addActionListener(this);
     }
     
@@ -49,7 +52,7 @@ public class ControlMain implements ActionListener{
         this.viewMain.setVisible(false);
         cc.inView();
     }
-    
+        
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.viewMain.jmi_suppliers)
@@ -58,5 +61,7 @@ public class ControlMain implements ActionListener{
             customers();
         else if(e.getSource() == this.cs.viewSuppliers.jbtn_back)
             inView();
+//        else if(e.getSource().equals(this.viewMain.jm_sales))
+//            sales();
     }
 }

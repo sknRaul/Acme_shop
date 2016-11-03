@@ -2,6 +2,7 @@ package controls;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import jdda.ConnectionDB;
@@ -17,7 +18,7 @@ public class ControlCustomersEdit implements ActionListener {
 
     private Connection conexion;
     private Statement st;
-    private int counter=10;
+    private ResultSet rs;
     
     ModelCustomersNewEdit modelCustomersNewEdit;
     ViewEditCustomers viewEditCustomer;
@@ -25,7 +26,7 @@ public class ControlCustomersEdit implements ActionListener {
     public ControlCustomersEdit(ModelCustomersNewEdit modelCustomersNewEdit, ViewEditCustomers viewEditCustomer){
         this.modelCustomersNewEdit = modelCustomersNewEdit;
         this.viewEditCustomer = viewEditCustomer;
-        conexion = conDB.Connection("acme_shop", "root", "1234");
+        conexion = conDB.Connection("acme_shop", "root", "1234");        
         
         try{
             st = conexion.createStatement();
@@ -34,35 +35,45 @@ public class ControlCustomersEdit implements ActionListener {
         }
         
         this.viewEditCustomer.jbtn_accept.addActionListener(this);
-        
+        this.viewEditCustomer.jbtn_charge.addActionListener(this);
     }
 
    @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource().equals(this.viewEditCustomer.jbtn_accept))
-            jbtnAcceptActionPerformed();
-            
+            jbtnAcceptActionPerformed();    
+        else if(ae.getSource().equals(this.viewEditCustomer.jbtn_charge))
+            jbtnChargeActionPerformed();
     }
            
     public void jbtnAcceptActionPerformed(){
-        deleteValue();
-        insertValues();
-        //setValues();
-        counter++;
+        updateValues();
     }
     
-    public void getValues(){
-        conDB.basicConsult("clientes", "id_cliente", this.modelCustomersNewEdit.getData());
-        this.viewEditCustomer.jtf_name.setText(this.conDB.getColumn()[1]);
-        this.viewEditCustomer.jtf_lastNameP.setText(this.conDB.getColumn()[2]);
-        this.viewEditCustomer.jtf_lastNameM.setText(this.conDB.getColumn()[3]);
-        this.viewEditCustomer.jtf_no.setText(this.conDB.getColumn()[4]);
-        this.viewEditCustomer.jtf_street.setText(this.conDB.getColumn()[5]);
-        this.viewEditCustomer.jtf_suburb.setText(this.conDB.getColumn()[6]);
-        this.viewEditCustomer.jtf_city.setText(this.conDB.getColumn()[7]);
-        this.viewEditCustomer.jtf_nick.setText(this.conDB.getColumn()[9]);
-        this.viewEditCustomer.jtf_tNumber.setText(this.conDB.getColumn()[10]);
-        this.viewEditCustomer.jtf_email.setText(this.conDB.getColumn()[11]);   
+    public void jbtnChargeActionPerformed(){
+        showData();
+    }
+    
+    public void showData(){
+    String query = "SELECT * from clientes WHERE id_cliente = "+this.modelCustomersNewEdit.getEditableValues();
+    try {
+        rs = st.executeQuery(query);
+        while(rs.next()){
+            this.viewEditCustomer.jtf_name.setText(rs.getString(2));
+            this.viewEditCustomer.jtf_lastNameP.setText(rs.getString(3));
+            this.viewEditCustomer.jtf_lastNameM.setText(rs.getString(4));
+            this.viewEditCustomer.jtf_tNumber.setText(rs.getString(11));
+            this.viewEditCustomer.jtf_email.setText(rs.getString(12));
+            this.viewEditCustomer.jtf_nick.setText(rs.getString(10));
+            this.viewEditCustomer.jtf_street.setText(rs.getString(6));
+            this.viewEditCustomer.jtf_no.setText(rs.getString(5));
+            this.viewEditCustomer.jtf_suburb.setText(rs.getString(7));
+            this.viewEditCustomer.jtf_city.setText(rs.getString(8));
+            this.viewEditCustomer.jcb_states.setSelectedItem(rs.getString(9));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     public void setValues(){
@@ -79,33 +90,26 @@ public class ControlCustomersEdit implements ActionListener {
         this.modelCustomersNewEdit.setState(""+this.viewEditCustomer.jcb_states.getSelectedItem());
     }
     
-    public void insertValues(){
+    public void updateValues(){
         try{
-            st = conexion.createStatement();
-            st.executeUpdate("INSERT INTO clientes (id_cliente,nombre,ap_paterno,ap_materno,no,calle,colonia,ciudad,estado,nombre_contacto,telefono,email)"
-                    +" VALUES ('"+ counter +"','"
-                    + this.modelCustomersNewEdit.getName() +"','"
-                    + this.modelCustomersNewEdit.getAp_pat() +"','"
-                    + this.modelCustomersNewEdit.getAp_ma()+"','"
-                    + this.modelCustomersNewEdit.getNo()+"','"
-                    + this.modelCustomersNewEdit.getStreet()+"','"
-                    + this.modelCustomersNewEdit.getSuburb()+"','"
-                    + this.modelCustomersNewEdit.getCity()+"','"
-                    + this.modelCustomersNewEdit.getState()+"','"
-                    + this.modelCustomersNewEdit.getNick()+"','"
-                    + this.modelCustomersNewEdit.getNumber()+"','"
-                    + this.modelCustomersNewEdit.getEmail()+"');");
-            System.out.println("Listo");
-        }catch(SQLException esql){
-            System.out.println("NOOOO"+ esql.getMessage());
-        }
-    }
-    public void deleteValue(){
-        try{
-            st.executeUpdate("DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = "+this.modelCustomersNewEdit.getData()+"");
-            System.out.println("Listo");
+            setValues();
+            st.executeUpdate("UPDATE clientes SET nombre ="+"'"+this.modelCustomersNewEdit.getName()+"'"
+                    +", ap_paterno ="+"'"+this.modelCustomersNewEdit.getAp_pat()+"'"
+                    +", ap_materno ="+"'"+this.modelCustomersNewEdit.getAp_ma()+"'"
+                    +", no ="+"'"+this.modelCustomersNewEdit.getNo()+"'"
+                    +", calle ="+"'"+this.modelCustomersNewEdit.getStreet()+"'"
+                    +", colonia ="+"'"+this.modelCustomersNewEdit.getSuburb()+"'"
+                    +", ciudad ="+"'"+this.modelCustomersNewEdit.getCity()+"'"
+                    +", estado ="+"'"+this.modelCustomersNewEdit.getState()+"'"
+                    +", nombre_contacto ="+"'"+this.modelCustomersNewEdit.getNick()+"'"
+                    +", telefono ="+"'"+this.modelCustomersNewEdit.getNumber()+"'"
+                    +", email ="+"'"+this.modelCustomersNewEdit.getEmail()+"'"
+                    +" WHERE id_cliente = "+this.modelCustomersNewEdit.getEditableValues());
+            
+            System.out.println("Actualización");
         }catch(SQLException e){
-            System.out.println("NOOOO"+ e.getMessage());
+            System.out.println("Algo salió mal: "+ e.getMessage());
         }
+        
     }
 }

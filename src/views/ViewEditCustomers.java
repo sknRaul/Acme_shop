@@ -46,6 +46,7 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jtf_street = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jtf_tNumber = new javax.swing.JTextField();
+        jbtn_charge = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jtf_email = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -140,6 +141,12 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jPanel1.add(jtf_tNumber);
         jtf_tNumber.setBounds(120, 160, 103, 25);
 
+        jbtn_charge.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_charge.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jbtn_charge.setText("Cargar");
+        jPanel1.add(jbtn_charge);
+        jbtn_charge.setBounds(230, 340, 100, 68);
+
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel12.setText("e-mail:");
         jPanel1.add(jLabel12);
@@ -167,7 +174,7 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jbtn_accept.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jbtn_accept.setText("Aceptar");
         jPanel1.add(jbtn_accept);
-        jbtn_accept.setBounds(230, 340, 192, 68);
+        jbtn_accept.setBounds(340, 340, 100, 68);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext (2).png"))); // NOI18N
         jPanel1.add(jLabel15);
@@ -215,6 +222,7 @@ public class ViewEditCustomers extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JButton jbtn_accept;
+    public javax.swing.JButton jbtn_charge;
     public javax.swing.JComboBox<String> jcb_states;
     public javax.swing.JTextField jtf_city;
     public javax.swing.JTextField jtf_email;

@@ -42,7 +42,7 @@ public class ViewCustomers extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jp_backGround = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jbtn_edit = new javax.swing.JButton();
         jbtn_delete = new javax.swing.JButton();
@@ -58,6 +58,9 @@ public class ViewCustomers extends javax.swing.JFrame {
         jmi_byNick = new javax.swing.JMenuItem();
         jm_add = new javax.swing.JMenu();
         jmi_newCustomer = new javax.swing.JMenuItem();
+        jm_back = new javax.swing.JMenu();
+        jmi_sales = new javax.swing.JMenuItem();
+        jmi_comeBack = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -66,13 +69,13 @@ public class ViewCustomers extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel2.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel2.setLayout(null);
+        jp_backGround.setBackground(new java.awt.Color(0, 51, 204));
+        jp_backGround.setForeground(new java.awt.Color(255, 51, 51));
+        jp_backGround.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel4.setText("Infromación existente: ");
-        jPanel2.add(jLabel4);
+        jp_backGround.add(jLabel4);
         jLabel4.setBounds(20, 140, 210, 23);
 
         jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
@@ -81,35 +84,24 @@ public class ViewCustomers extends javax.swing.JFrame {
                 jbtn_editActionPerformed(evt);
             }
         });
-        jPanel2.add(jbtn_edit);
+        jp_backGround.add(jbtn_edit);
         jbtn_edit.setBounds(140, 350, 80, 60);
 
         jbtn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Borrar_trituradora.png"))); // NOI18N
-        jPanel2.add(jbtn_delete);
+        jp_backGround.add(jbtn_delete);
         jbtn_delete.setBounds(50, 350, 83, 59);
 
-        jt_infoCustomer.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane2.setViewportView(jt_infoCustomer);
 
-        jPanel2.add(jScrollPane2);
+        jp_backGround.add(jScrollPane2);
         jScrollPane2.setBounds(10, 180, 440, 150);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext.png"))); // NOI18N
-        jPanel2.add(jLabel1);
+        jp_backGround.add(jLabel1);
         jLabel1.setBounds(-30, 20, 460, 80);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/robin-batman-dc-comics-superhero-pics-161649.jpg"))); // NOI18N
-        jPanel2.add(jLabel2);
+        jp_backGround.add(jLabel2);
         jLabel2.setBounds(-10, 0, 670, 500);
 
         jm_search.setText("Buscar");
@@ -135,17 +127,27 @@ public class ViewCustomers extends javax.swing.JFrame {
 
         jMenuBar1.add(jm_add);
 
+        jm_back.setText("Regresar");
+
+        jmi_sales.setText("Ventas");
+        jm_back.add(jmi_sales);
+
+        jmi_comeBack.setText("Regresar");
+        jm_back.add(jmi_comeBack);
+
+        jMenuBar1.add(jm_back);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+            .addComponent(jp_backGround, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(jp_backGround, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
         pack();
@@ -202,17 +204,20 @@ public class ViewCustomers extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JButton jbtn_delete;
     public javax.swing.JButton jbtn_edit;
     public javax.swing.JMenu jm_add;
+    public javax.swing.JMenu jm_back;
     public javax.swing.JMenu jm_search;
     public javax.swing.JMenuItem jmi_byID;
     public javax.swing.JMenuItem jmi_byName;
     public javax.swing.JMenuItem jmi_byNick;
     public javax.swing.JMenuItem jmi_byState;
+    public javax.swing.JMenuItem jmi_comeBack;
     public javax.swing.JMenuItem jmi_newCustomer;
+    public javax.swing.JMenuItem jmi_sales;
+    public javax.swing.JPanel jp_backGround;
     public javax.swing.JTable jt_infoCustomer;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,6 +22,9 @@ public class Main {
     public static ControlCustomersEdit controlCustomerEdit;  
     public static ViewNewCustomers viewNewCustomer;
     public static ControlCustomersNew controlCustomersNew;
+    public static ModelSales modelSales;
+    public static ViewSales viewSales;
+    public static ControlSales controlSales;
     
     public static void main(String[] DDR) {
         ViewAddSupplier vas = new ViewAddSupplier();
@@ -39,6 +42,7 @@ public class Main {
         ViewSuppliers vs = new ViewSuppliers();
         ModelSuppliers ms = new ModelSuppliers();
         ControlSuppliers cs = new ControlSuppliers(mes, vs, controls);
+        
         vs.setVisible(false);
         viewEditCustomer = new ViewEditCustomers();
         modelCustomersNewEdit = new ModelCustomersNewEdit();
@@ -46,14 +50,19 @@ public class Main {
         
         viewNewCustomer = new ViewNewCustomers();
         controlCustomersNew = new ControlCustomersNew(modelCustomersNewEdit, viewNewCustomer);
+        
+        modelSales = new ModelSales();
+        viewSales = new ViewSales();
+        controlSales = new ControlSales(modelSales, viewSales);
                 
         viewCustomers = new ViewCustomers();
         modelCustomers = new ModelCustomers();
         
         
-        JPanel views[] = new JPanel[2];
+        JPanel views[] = new JPanel[3];
         views[0] = viewNewCustomer;
         views[1] = viewEditCustomer;
+        views[2] = viewSales;
         
         controlCustomers = new ControlCustomers(modelCustomersNewEdit, viewCustomers, views);
         viewCustomers.setVisible(false);
