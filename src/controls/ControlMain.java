@@ -30,11 +30,14 @@ public class ControlMain implements ActionListener{
         
         cs = (ControlSuppliers) controls[0];
         cc = (ControlCustomers) controls[1];
+        cSales = (ControlSales) controls[2];
         
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
         this.viewMain.jmi_sales.addActionListener(this);
         this.cs.viewSuppliers.jbtn_back.addActionListener(this);
+        this.viewMain.jmi_sales.addActionListener(this);
+        
     }
     
     public void inView(){
@@ -53,6 +56,13 @@ public class ControlMain implements ActionListener{
         cc.inView();
     }
         
+    public void sales(){
+        this.viewMain.setContentPane(cSales.viewSales);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+        this.viewMain.setSize(cSales.viewSales.jp_size.getSize());
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.viewMain.jmi_suppliers)
@@ -61,7 +71,7 @@ public class ControlMain implements ActionListener{
             customers();
         else if(e.getSource() == this.cs.viewSuppliers.jbtn_back)
             inView();
-//        else if(e.getSource().equals(this.viewMain.jm_sales))
-//            sales();
+       else if(e.getSource() == this.viewMain.jmi_sales)
+            sales();
     }
 }

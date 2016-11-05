@@ -33,7 +33,7 @@ public class ControlSales implements ActionListener {
     private DefaultTableModel model;
     
     ModelSales modelSales;
-    ViewSales viewSales;
+    public ViewSales viewSales;
     
     public ControlSales(ModelSales modelSales, ViewSales viewSales){
         
@@ -54,7 +54,11 @@ public class ControlSales implements ActionListener {
         this.viewSales.jbtn_searchByName.addActionListener(this);
         this.viewSales.jbtn_searchCustomer.addActionListener(this);
         this.viewSales.jbtn_searchProduct.addActionListener(this);
-
+        inView();
+    }
+    
+    public void inView(){
+        this.viewSales.setVisible(true);
     }
     
     public void cargarInterface(){

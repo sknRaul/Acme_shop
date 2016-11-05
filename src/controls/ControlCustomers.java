@@ -95,8 +95,6 @@ public class ControlCustomers implements ActionListener {
             jbtnDeleteActionPerformed();
         }else if(ae.getSource().equals(this.viewCustomers.jmi_comeBack)){
             back();
-        }else if(ae.getSource().equals(this.viewCustomers.jmi_sales)){
-            jmiSalesActionPerformed();
         }
     }
     
@@ -175,15 +173,6 @@ public class ControlCustomers implements ActionListener {
         }catch(Exception e){
             System.out.println("NO se que pasa: "+ e.getMessage());
         }
-    }
-    
-    public void jmiSalesActionPerformed(){
-        this.viewCustomers.setContentPane(views[2]);
-        this.viewCustomers.revalidate();
-        this.viewCustomers.repaint();
-        //this.viewCustomers.pack();
-        this.viewCustomers.setSize(this.viewCustomers.getSize());
-        
     }
     
     public void jmiByName(){

@@ -62,7 +62,6 @@ public class Main {
         JPanel views[] = new JPanel[3];
         views[0] = viewNewCustomer;
         views[1] = viewEditCustomer;
-        views[2] = viewSales;
         
         controlCustomers = new ControlCustomers(modelCustomersNewEdit, viewCustomers, views);
         viewCustomers.setVisible(false);
@@ -70,10 +69,11 @@ public class Main {
         ViewMain vm = new ViewMain();
         ModelMain mm = new ModelMain();
         
-        Object controlsMain[] = new Object[2];
+        Object controlsMain[] = new Object[3];
         controlsMain[0] = cs;
         controlsMain[1] = controlCustomers;
-        
+        controlsMain[2] = controlSales;
+                
         ControlMain cm = new ControlMain(mm, vm, controlsMain);
     }
 }
