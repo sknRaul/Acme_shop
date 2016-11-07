@@ -26,7 +26,46 @@ public class Main {
     public static ViewSales viewSales;
     public static ControlSales controlSales;
     
+    //---------------------Productos----------------------------
+    private static ViewProducts viewProducts;
+    private static ModelProducts modelProducts;
+    private static ControllerProductos controllerProducts;
+    
+    private static ViewEdit viewEdit;
+    private static ControllerEditProducts controllerEdit;
+    
+    private static ViewNew viewNew;
+    private static ControllerNewProducts cnp;
+    //--------------------Fin Productos----------------------------
     public static void main(String[] DDR) {
+        
+        //----------------------------Products----------------------
+        viewNew = new ViewNew();
+        ControllerNewProducts cnp = new ControllerNewProducts(modelProducts,viewNew);
+        
+        viewEdit = new ViewEdit();
+        ControllerEditProducts cep = new ControllerEditProducts(modelProducts,viewEdit);
+        
+        Object controlsp[] = new Object[3];
+        controlsp[0] = cnp;
+        controlsp[1] = controllerProducts;
+        controlsp[2] = cep;
+        
+        viewProducts = new ViewProducts();
+        modelProducts = new ModelProducts();
+        
+        ControllerProductos controllerProductos = new ControllerProductos(modelProducts,viewProducts,controlsp);
+        
+        JPanel viewsp[]=new JPanel[2];
+      
+        viewsp[0]= viewNew;
+        //viewsp[1]= viewProducts;
+        viewsp[1]= viewEdit;
+      
+       //viewMain = new ViewProducts();
+       //modelMain = new ModelProducts();
+       //controllerMain = new ControllerProducts(viewMain,modelMain,views);
+        //----------------------------Fin Products------------------
         ViewAddSupplier vas = new ViewAddSupplier();
         ModelSuppliers mas = new ModelSuppliers();
         ControlAddSupplier cas = new ControlAddSupplier(mas, vas);
@@ -69,10 +108,11 @@ public class Main {
         ViewMain vm = new ViewMain();
         ModelMain mm = new ModelMain();
         
-        Object controlsMain[] = new Object[3];
+        Object controlsMain[] = new Object[4];
         controlsMain[0] = cs;
         controlsMain[1] = controlCustomers;
         controlsMain[2] = controlSales;
+        controlsMain[3] = controllerProducts;
                 
         ControlMain cm = new ControlMain(mm, vm, controlsMain);
     }

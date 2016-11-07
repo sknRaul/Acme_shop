@@ -19,6 +19,7 @@ public class ControlMain implements ActionListener{
     private Object controls[];
     ControlSuppliers cs;
     ControlCustomers cc;
+    ControllerProductos cp;
     ControlSales cSales;
     
     public ControlMain(ModelMain modelMain, ViewMain viewMain, Object controls[]){
@@ -31,13 +32,15 @@ public class ControlMain implements ActionListener{
         cs = (ControlSuppliers) controls[0];
         cc = (ControlCustomers) controls[1];
         cSales = (ControlSales) controls[2];
+        cp = (ControllerProductos) controls[3];
         
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
         this.viewMain.jmi_sales.addActionListener(this);
         this.cs.viewSuppliers.jbtn_back.addActionListener(this);
         this.viewMain.jmi_sales.addActionListener(this);
-        
+        this.viewMain.jm_products.addActionListener(this);
+        this.viewMain.jmi_products.addActionListener(this);
     }
     
     public void inView(){
@@ -55,6 +58,10 @@ public class ControlMain implements ActionListener{
         this.viewMain.setVisible(false);
         cc.inView();
     }
+    public void products(){
+        this.viewMain.setVisible(false);
+        cp.init_view();
+    }
         
     public void sales(){
         this.viewMain.setContentPane(cSales.viewSales);
@@ -69,6 +76,8 @@ public class ControlMain implements ActionListener{
             suppliers();
         else if(e.getSource() == this.viewMain.jmi_Customers)
             customers();
+        else if(e.getSource() == this.viewMain.jmi_products)
+            products();
         else if(e.getSource() == this.cs.viewSuppliers.jbtn_back)
             inView();
        else if(e.getSource() == this.viewMain.jmi_sales)

@@ -27,6 +27,7 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmi_suppliers = new javax.swing.JMenuItem();
@@ -34,6 +35,10 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_Customers = new javax.swing.JMenuItem();
         jm_sales = new javax.swing.JMenu();
         jmi_sales = new javax.swing.JMenuItem();
+        jm_products = new javax.swing.JMenu();
+        jmi_products = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +62,13 @@ public class ViewMain extends javax.swing.JFrame {
         jm_sales.add(jmi_sales);
 
         jMenuBar1.add(jm_sales);
+
+        jm_products.setText("Productos");
+
+        jmi_products.setText("Productos");
+        jm_products.add(jmi_products);
+
+        jMenuBar1.add(jm_products);
 
         setJMenuBar(jMenuBar1);
 
@@ -117,8 +129,11 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenu jm_products;
     public javax.swing.JMenu jm_sales;
     public javax.swing.JMenuItem jmi_Customers;
+    public javax.swing.JMenuItem jmi_products;
     public javax.swing.JMenuItem jmi_sales;
     public javax.swing.JMenuItem jmi_suppliers;
     // End of variables declaration//GEN-END:variables
