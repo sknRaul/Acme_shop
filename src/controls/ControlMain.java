@@ -19,7 +19,7 @@ public class ControlMain implements ActionListener{
     private Object controls[];
     ControlSuppliers cs;
     ControlCustomers cc;
-    ControllerProductos cp;
+    ControllerProductos cProducts;
     ControlSales cSales;
     
     public ControlMain(ModelMain modelMain, ViewMain viewMain, Object controls[]){
@@ -32,7 +32,7 @@ public class ControlMain implements ActionListener{
         cs = (ControlSuppliers) controls[0];
         cc = (ControlCustomers) controls[1];
         cSales = (ControlSales) controls[2];
-        cp = (ControllerProductos) controls[3];
+        cProducts = (ControllerProductos) controls[3];
         
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
@@ -60,7 +60,7 @@ public class ControlMain implements ActionListener{
     }
     public void products(){
         this.viewMain.setVisible(false);
-        cp.init_view();
+        cProducts.init_view();
     }
         
     public void sales(){

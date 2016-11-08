@@ -7,15 +7,15 @@ package controls;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelProducts;
-import views.ViewNew;
+import views.ViewNewProducts;
 /**
  *
  * @author Diego
  */
 public class ControllerNewProducts implements  ActionListener{
      ModelProducts mnp = new ModelProducts();
-    ViewNew vnp = new ViewNew();
-    public ControllerNewProducts(ModelProducts mnp, ViewNew vnp){
+    ViewNewProducts vnp = new ViewNewProducts();
+    public ControllerNewProducts(ModelProducts mnp, ViewNewProducts vnp){
         this.mnp = mnp;
         this.vnp = vnp;
       this.vnp.jtf_existencias.addActionListener(this);

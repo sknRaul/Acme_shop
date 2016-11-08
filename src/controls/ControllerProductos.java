@@ -33,7 +33,6 @@ public class ControllerProductos implements ActionListener {
         
         cnp = (ControllerNewProducts) controls[0];
         cep = (ControllerEditProducts) controls[1];
-        init_view();
         
         this.viewProducts.jbtn_borrar.addActionListener(this);
         this.viewProducts.jbtn_edit.addActionListener(this);

@@ -26,46 +26,34 @@ public class Main {
     public static ViewSales viewSales;
     public static ControlSales controlSales;
     
-    //---------------------Productos----------------------------
     private static ViewProducts viewProducts;
     private static ModelProducts modelProducts;
     private static ControllerProductos controllerProducts;
     
-    private static ViewEdit viewEdit;
-    private static ControllerEditProducts controllerEdit;
+    private static ViewEditProducts viewEditProducts;
+    private static ControllerEditProducts controllerEditProducts;
     
-    private static ViewNew viewNew;
-    private static ControllerNewProducts cnp;
-    //--------------------Fin Productos----------------------------
+    private static ViewNewProducts viewNewProducts;
+    private static ControllerNewProducts controlNewProducts;
+    
+    
     public static void main(String[] DDR) {
         
-        //----------------------------Products----------------------
-        viewNew = new ViewNew();
-        ControllerNewProducts cnp = new ControllerNewProducts(modelProducts,viewNew);
+        viewNewProducts = new ViewNewProducts();
+        modelProducts = new ModelProducts();
+        ControllerNewProducts cnp = new ControllerNewProducts(modelProducts,viewNewProducts);
         
-        viewEdit = new ViewEdit();
-        ControllerEditProducts cep = new ControllerEditProducts(modelProducts,viewEdit);
+        viewEditProducts = new ViewEditProducts();
+        ControllerEditProducts cep = new ControllerEditProducts(modelProducts,viewEditProducts);
         
-        Object controlsp[] = new Object[3];
-        controlsp[0] = cnp;
-        controlsp[1] = controllerProducts;
-        controlsp[2] = cep;
+        Object controlsProducts[] = new Object[2];
+        controlsProducts[0] = cnp;
+        controlsProducts[1] = cep;
         
         viewProducts = new ViewProducts();
-        modelProducts = new ModelProducts();
+        controllerProducts = new ControllerProductos(modelProducts,viewProducts,controlsProducts);
+        viewProducts.setVisible(false);
         
-        ControllerProductos controllerProductos = new ControllerProductos(modelProducts,viewProducts,controlsp);
-        
-        JPanel viewsp[]=new JPanel[2];
-      
-        viewsp[0]= viewNew;
-        //viewsp[1]= viewProducts;
-        viewsp[1]= viewEdit;
-      
-       //viewMain = new ViewProducts();
-       //modelMain = new ModelProducts();
-       //controllerMain = new ControllerProducts(viewMain,modelMain,views);
-        //----------------------------Fin Products------------------
         ViewAddSupplier vas = new ViewAddSupplier();
         ModelSuppliers mas = new ModelSuppliers();
         ControlAddSupplier cas = new ControlAddSupplier(mas, vas);

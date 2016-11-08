@@ -7,7 +7,7 @@ package controls;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelProducts;
-import views.ViewEdit;
+import views.ViewEditProducts;
 import jdda.ConnectionDB;
 import java.sql.ResultSet;
 /**
@@ -16,10 +16,10 @@ import java.sql.ResultSet;
  */
 public class ControllerEditProducts implements ActionListener {
     ModelProducts mep = new ModelProducts();
-    ViewEdit vep = new ViewEdit();
+    ViewEditProducts vep = new ViewEditProducts();
     ConnectionDB cb = new ConnectionDB();
     ResultSet rs;
-public ControllerEditProducts(ModelProducts mp,ViewEdit vep){
+public ControllerEditProducts(ModelProducts mp,ViewEditProducts vep){
         this.mep = mp;
         this.vep = vep;
         

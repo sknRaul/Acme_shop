@@ -9,12 +9,12 @@ package views;
  *
  * @author Diego
  */
-public class ViewNew extends javax.swing.JPanel {
+public class ViewNewProducts extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewProductsT
      */
-    public ViewNew() {
+    public ViewNewProducts() {
         initComponents();
     }
 

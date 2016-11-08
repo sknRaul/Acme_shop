@@ -9,12 +9,12 @@ package views;
  *
  * @author Diego
  */
-public class ViewEdit extends javax.swing.JPanel {
+public class ViewEditProducts extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewEdit
      */
-    public ViewEdit() {
+    public ViewEditProducts() {
         initComponents();
     }
 
