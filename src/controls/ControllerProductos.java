@@ -59,7 +59,7 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.setContentPane(cnp.vnp);
         this.viewProducts.revalidate();
         this.viewProducts.repaint();
-        this.viewProducts.pack();
+        this.viewProducts.setSize(this.cnp.vnp.getSize());
     }
     
     public void back(){
@@ -91,7 +91,7 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.setContentPane(cep.vep);
         this.viewProducts.revalidate();
         this.viewProducts.repaint();
-        this.viewProducts.pack();
+        this.viewProducts.setSize(this.cep.vep.jLabel9.getSize());
         
         int row = this.viewProducts.jt_productos.getSelectedRow();
         int editer = (int)this.viewProducts.jt_productos.getValueAt(row, 0);

@@ -42,7 +42,8 @@ public class ViewNewProducts extends javax.swing.JPanel {
         jbtn_save = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jta_descripcion = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
+        jl_background = new javax.swing.JLabel();
+        jp_size = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(153, 153, 255));
         setLayout(null);
@@ -114,10 +115,12 @@ public class ViewNewProducts extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(20, 170, 240, 210);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/produs2.jpg"))); // NOI18N
-        jLabel8.setText("jLabel8");
-        add(jLabel8);
-        jLabel8.setBounds(-180, 0, 960, 450);
+        jl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/produs2.jpg"))); // NOI18N
+        jl_background.setText("jLabel8");
+        add(jl_background);
+        jl_background.setBounds(-180, 0, 960, 450);
+        add(jp_size);
+        jp_size.setBounds(0, 0, 770, 450);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_productoActionPerformed
@@ -137,9 +140,10 @@ public class ViewNewProducts extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jbtn_save;
+    private javax.swing.JLabel jl_background;
+    private javax.swing.JPanel jp_size;
     public javax.swing.JTextArea jta_descripcion;
     public javax.swing.JTextField jtf_existencias;
     public javax.swing.JTextField jtf_idProducto;

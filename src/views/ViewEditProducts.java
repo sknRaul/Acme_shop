@@ -27,6 +27,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jta_descripcione = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jtf_idProductoe = new javax.swing.JTextField();
         jtf_productoe = new javax.swing.JTextField();
@@ -40,11 +41,15 @@ public class ViewEditProducts extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jbtn_savee = new javax.swing.JButton();
-        jta_descripcione = new javax.swing.JTextArea();
-        jScrollPane1 = new javax.swing.JScrollPane();
         jLabel9 = new javax.swing.JLabel();
 
         setLayout(null);
+
+        jta_descripcione.setColumns(20);
+        jta_descripcione.setRows(5);
+        jta_descripcione.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(jta_descripcione);
+        jta_descripcione.setBounds(220, 260, 380, 208);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Datos del producto");
@@ -106,18 +111,9 @@ public class ViewEditProducts extends javax.swing.JPanel {
         add(jbtn_savee);
         jbtn_savee.setBounds(50, 160, 50, 50);
 
-        jta_descripcione.setColumns(20);
-        jta_descripcione.setRows(5);
-        jta_descripcione.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jta_descripcione);
-        jta_descripcione.setBounds(220, 260, 380, 208);
-
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productsEdit2.jpg"))); // NOI18N
-        jLabel9.setText("jLabel9");
-        jScrollPane1.setViewportView(jLabel9);
-
-        add(jScrollPane1);
-        jScrollPane1.setBounds(0, 0, 980, 500);
+        add(jLabel9);
+        jLabel9.setBounds(0, 0, 960, 540);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_productoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_productoeActionPerformed
@@ -137,8 +133,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel jLabel9;
     public javax.swing.JButton jbtn_savee;
     public javax.swing.JTextArea jta_descripcione;
     public javax.swing.JTextField jtf_existenciase;
