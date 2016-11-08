@@ -46,6 +46,7 @@ public class ViewCustomers extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jbtn_edit = new javax.swing.JButton();
         jbtn_delete = new javax.swing.JButton();
+        jbtn_back = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jt_infoCustomer = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -59,7 +60,6 @@ public class ViewCustomers extends javax.swing.JFrame {
         jm_add = new javax.swing.JMenu();
         jmi_newCustomer = new javax.swing.JMenuItem();
         jm_back = new javax.swing.JMenu();
-        jmi_sales = new javax.swing.JMenuItem();
         jmi_comeBack = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,7 +76,7 @@ public class ViewCustomers extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel4.setText("Infromación existente: ");
         jp_backGround.add(jLabel4);
-        jLabel4.setBounds(20, 140, 210, 23);
+        jLabel4.setBounds(20, 160, 210, 23);
 
         jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
         jbtn_edit.addActionListener(new java.awt.event.ActionListener() {
@@ -85,20 +85,29 @@ public class ViewCustomers extends javax.swing.JFrame {
             }
         });
         jp_backGround.add(jbtn_edit);
-        jbtn_edit.setBounds(140, 350, 80, 60);
+        jbtn_edit.setBounds(270, 360, 80, 60);
 
         jbtn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Borrar_trituradora.png"))); // NOI18N
         jp_backGround.add(jbtn_delete);
-        jbtn_delete.setBounds(50, 350, 83, 59);
+        jbtn_delete.setBounds(180, 360, 83, 59);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        jp_backGround.add(jbtn_back);
+        jbtn_back.setBounds(20, 100, 50, 50);
 
         jScrollPane2.setViewportView(jt_infoCustomer);
 
         jp_backGround.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 180, 440, 150);
+        jScrollPane2.setBounds(10, 190, 440, 150);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext.png"))); // NOI18N
         jp_backGround.add(jLabel1);
-        jLabel1.setBounds(-30, 20, 460, 80);
+        jLabel1.setBounds(20, 20, 460, 80);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/robin-batman-dc-comics-superhero-pics-161649.jpg"))); // NOI18N
         jp_backGround.add(jLabel2);
@@ -129,9 +138,6 @@ public class ViewCustomers extends javax.swing.JFrame {
 
         jm_back.setText("Regresar");
 
-        jmi_sales.setText("Ventas");
-        jm_back.add(jmi_sales);
-
         jmi_comeBack.setText("Regresar");
         jm_back.add(jmi_comeBack);
 
@@ -143,11 +149,11 @@ public class ViewCustomers extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_backGround, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+            .addComponent(jp_backGround, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_backGround, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(jp_backGround, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
 
         pack();
@@ -205,6 +211,7 @@ public class ViewCustomers extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_delete;
     public javax.swing.JButton jbtn_edit;
     public javax.swing.JMenu jm_add;
@@ -216,7 +223,6 @@ public class ViewCustomers extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_byState;
     public javax.swing.JMenuItem jmi_comeBack;
     public javax.swing.JMenuItem jmi_newCustomer;
-    public javax.swing.JMenuItem jmi_sales;
     public javax.swing.JPanel jp_backGround;
     public javax.swing.JTable jt_infoCustomer;
     // End of variables declaration//GEN-END:variables

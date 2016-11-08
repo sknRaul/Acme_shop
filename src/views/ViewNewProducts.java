@@ -40,6 +40,7 @@ public class ViewNewProducts extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jbtn_save = new javax.swing.JButton();
+        jbtn_back = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jta_descripcion = new javax.swing.JTextArea();
         jl_background = new javax.swing.JLabel();
@@ -96,6 +97,7 @@ public class ViewNewProducts extends javax.swing.JPanel {
         jLabel7.setBounds(300, 230, 80, 14);
 
         jbtn_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        jbtn_save.setToolTipText("");
         jbtn_save.setBorder(null);
         jbtn_save.setBorderPainted(false);
         jbtn_save.setContentAreaFilled(false);
@@ -106,7 +108,16 @@ public class ViewNewProducts extends javax.swing.JPanel {
             }
         });
         add(jbtn_save);
-        jbtn_save.setBounds(350, 300, 50, 50);
+        jbtn_save.setBounds(360, 300, 50, 50);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        add(jbtn_back);
+        jbtn_back.setBounds(290, 300, 50, 50);
 
         jta_descripcion.setColumns(20);
         jta_descripcion.setRows(5);
@@ -141,9 +152,10 @@ public class ViewNewProducts extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_save;
     private javax.swing.JLabel jl_background;
-    private javax.swing.JPanel jp_size;
+    public javax.swing.JPanel jp_size;
     public javax.swing.JTextArea jta_descripcion;
     public javax.swing.JTextField jtf_existencias;
     public javax.swing.JTextField jtf_idProducto;

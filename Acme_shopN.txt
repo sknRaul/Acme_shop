@@ -1,0 +1,107 @@
+CREATE TABLE proveedores (
+  id_proveedor int(11) NOT NULL AUTO_INCREMENT,
+  nombre varchar(20) NOT NULL,
+  rfc varchar(20) NOT NULL,
+  calle varchar(20) NOT NULL,
+  colonia varchar(20) NOT NULL,
+  ciudad varchar(20) NOT NULL,
+  estado varchar(20) NOT NULL,
+  nombre_contacto varchar(50) NOT NULL,
+  telefono int(10) NOT NULL,
+  email varchar(20) NOT NULL,
+  PRIMARY KEY (id_proveedor)
+);
+
+
+CREATE TABLE clientes (
+  id_cliente int(11) NOT NULL AUTO_INCREMENT,
+  nombre varchar(20) NOT NULL,
+  ap_paterno varchar(20) NOT NULL,
+  ap_materno varchar(20) NOT NULL,
+  no int(11) NOT NULL,
+  calle varchar(20) NOT NULL,
+  colonia varchar(20) NOT NULL,
+  ciudad varchar(20) NOT NULL,
+  estado varchar(20) NOT NULL,
+  nombre_contacto varchar(50) NOT NULL,
+  telefono INT(10) NOT NULL,
+  email varchar(20) NOT NULL,
+  rfc varchar(20) NOT NULL,
+  PRIMARY KEY (id_cliente)
+);
+
+
+CREATE TABLE usuarios(
+id_usuario int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombre_usuario varchar(20) NOT NULL,
+password varchar(20) NOT NULL,
+nivel_usuario varchar(20) NOT NULL
+);
+
+
+CREATE TABLE compras (
+  id_compra int(11) NOT NULL AUTO_INCREMENT,
+  id_proveedor int(11) NOT NULL,
+  fecha date NOT NULL,
+  subtotal int(11) NOT NULL,
+  iva float NOT NULL,
+  total int(11) NOT NULL,
+  PRIMARY KEY (id_compra),
+  FOREIGN KEY (id_proveedor) REFERENCES proveedores (id_proveedor)
+);
+
+
+
+CREATE TABLE detalle_ventas (
+  id_detalle_venta int(11) NOT NULL AUTO_INCREMENT,
+  id_venta int(11) NOT NULL,
+  id_producto int(11) NOT NULL,
+  id_usuario int(11) NOT NULL,
+  cantidad int(5) NOT NULL,
+  total_producto int(11) NOT NULL,
+  precio int(11) NOT NULL,
+  PRIMARY KEY (id_detalle_venta),
+  FOREIGN KEY (id_venta) REFERENCES ventas (id_venta),
+  FOREIGN KEY (id_producto) REFERENCES productos (id_producto),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
+);
+
+
+
+CREATE TABLE ventas (
+  id_venta int(11) NOT NULL AUTO_INCREMENT,
+  id_cliente int(11) NOT NULL,
+  fecha date NOT NULL,
+  subtotal int(11) NOT NULL,
+  iva float NOT NULL,
+  total int(11) NOT NULL,
+  PRIMARY KEY (id_venta),
+  KEY id_cliente (id_cliente),
+  FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
+);
+
+
+
+CREATE TABLE detalle_compras (
+  id_detalle_compra int(11) NOT NULL AUTO_INCREMENT,
+  id_compra int(11) NOT NULL,
+  id_producto int(11) NOT NULL,
+  cantidad int(5) NOT NULL,
+  total_producto int(11) NOT NULL,
+  precio int(11) NOT NULL,
+  PRIMARY KEY (id_detalle_compra),
+  FOREIGN KEY (id_compra) REFERENCES compras (id_compra),
+  FOREIGN KEY (id_producto) REFERENCES productos (id_producto)
+);
+
+
+
+CREATE TABLE productos (
+  id_producto int(11) NOT NULL AUTO_INCREMENT,
+  producto varchar(20) NOT NULL,
+  descripcion text NOT NULL,
+  precio_compra int(11) NOT NULL,
+  precio_venta int(11) NOT NULL,
+  existencias int(3) NOT NULL,
+  PRIMARY KEY (id_producto)
+);

@@ -31,6 +31,7 @@ public class ViewProducts extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jbtn_borrar = new javax.swing.JButton();
         jbtn_edit = new javax.swing.JButton();
+        jbtn_back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_productos = new javax.swing.JTable();
@@ -54,30 +55,46 @@ public class ViewProducts extends javax.swing.JFrame {
         jp_BackGround.add(jLabel1);
         jLabel1.setBounds(210, 20, 230, 56);
 
+        jbtn_borrar.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
         jbtn_borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Borrar_trituradora.png"))); // NOI18N
+        jbtn_borrar.setText("BORRAR");
         jbtn_borrar.setBorder(null);
         jbtn_borrar.setBorderPainted(false);
         jbtn_borrar.setContentAreaFilled(false);
         jbtn_borrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_borrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jbtn_borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_borrarActionPerformed(evt);
             }
         });
         jp_BackGround.add(jbtn_borrar);
-        jbtn_borrar.setBounds(110, 350, 80, 60);
+        jbtn_borrar.setBounds(110, 350, 80, 80);
 
+        jbtn_edit.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
         jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
+        jbtn_edit.setText("EDITAR");
         jbtn_edit.setBorder(null);
         jbtn_edit.setBorderPainted(false);
         jbtn_edit.setContentAreaFilled(false);
+        jbtn_edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_edit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jbtn_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_editActionPerformed(evt);
             }
         });
         jp_BackGround.add(jbtn_edit);
-        jbtn_edit.setBounds(300, 350, 80, 60);
+        jbtn_edit.setBounds(300, 350, 80, 70);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        jp_BackGround.add(jbtn_back);
+        jbtn_back.setBounds(50, 30, 50, 50);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Informacion exisente:");
@@ -199,6 +216,7 @@ public class ViewProducts extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_borrar;
     public javax.swing.JButton jbtn_edit;
     public javax.swing.JMenu jm_agregar;

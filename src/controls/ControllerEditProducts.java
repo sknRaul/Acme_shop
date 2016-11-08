@@ -25,7 +25,7 @@ public ControllerEditProducts(ModelProducts mp,ViewEditProducts vep){
         
         init_view();
         this.vep.jbtn_savee.addActionListener(this);
-        
+        this.vep.jbtn_back.addActionListener(this);
         
     }
 

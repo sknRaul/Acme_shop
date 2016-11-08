@@ -29,6 +29,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
 
         jta_descripcione = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        jbtn_back = new javax.swing.JButton();
         jtf_idProductoe = new javax.swing.JTextField();
         jtf_productoe = new javax.swing.JTextField();
         jtf_precioComprae = new javax.swing.JTextField();
@@ -55,6 +56,15 @@ public class ViewEditProducts extends javax.swing.JPanel {
         jLabel1.setText("Datos del producto");
         add(jLabel1);
         jLabel1.setBounds(280, 10, 150, 22);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        add(jbtn_back);
+        jbtn_back.setBounds(50, 50, 50, 50);
 
         jtf_idProductoe.setEditable(false);
         add(jtf_idProductoe);
@@ -109,7 +119,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
             }
         });
         add(jbtn_savee);
-        jbtn_savee.setBounds(50, 160, 50, 50);
+        jbtn_savee.setBounds(50, 210, 50, 50);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productsEdit2.jpg"))); // NOI18N
         add(jLabel9);
@@ -134,6 +144,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel9;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_savee;
     public javax.swing.JTextArea jta_descripcione;
     public javax.swing.JTextField jtf_existenciase;

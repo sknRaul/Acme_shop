@@ -42,7 +42,9 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.jmi_noProducto.addActionListener(this);
         this.viewProducts.jmi_nombreProducto.addActionListener(this);
         this.viewProducts.jmi_nuevoProducto.addActionListener(this);
-       
+        this.cep.vep.jbtn_back.addActionListener(this);
+        this.cnp.vnp.jbtn_back.addActionListener(this);
+        //this.viewProducts.jbtn_back.addActionListener(this);
         
     }
     
@@ -52,8 +54,6 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.setLocationRelativeTo(null);
         showData("Select * from productos");
     }
-    
-   
     
     public void add(){
         this.viewProducts.setContentPane(cnp.vnp);
@@ -68,7 +68,8 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.repaint();
         this.viewProducts.setSize(this.viewProducts.getSize());
         clean();
-        showData("Select * from provedores");
+        showData("Select * from productos");
+        this.viewProducts.setSize(780, 490);
     }
     
     public void delete(){
@@ -145,7 +146,10 @@ public class ControllerProductos implements ActionListener {
             seach("producto","el prodcuto");
         else if(e.getSource() == this.viewProducts.jmi_descricionProducto)
             seach("descripcion","la descripcion");
-        
+        else if (e.getSource()==this.cep.vep.jbtn_back)
+            back();
+        else if (e.getSource()==this.cnp.vnp.jbtn_back)
+            back();
     }
     
     

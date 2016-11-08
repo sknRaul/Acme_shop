@@ -28,8 +28,8 @@ public class ViewSuppliers extends javax.swing.JFrame {
     private void initComponents() {
 
         jp_barckGround = new javax.swing.JPanel();
-        jbtn_back = new javax.swing.JButton();
         jl_title = new javax.swing.JLabel();
+        jbtn_back = new javax.swing.JButton();
         jsc_table = new javax.swing.JScrollPane();
         jt_suppliers = new javax.swing.JTable();
         jbtn_edit = new javax.swing.JButton();
@@ -57,17 +57,20 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         jp_barckGround.setLayout(null);
 
-        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.jpg"))); // NOI18N
-        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jbtn_back.setDefaultCapable(false);
-        jp_barckGround.add(jbtn_back);
-        jbtn_back.setBounds(50, 30, 50, 50);
-
         jl_title.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         jl_title.setForeground(new java.awt.Color(0, 102, 102));
         jl_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/title_suppliers.png"))); // NOI18N
         jp_barckGround.add(jl_title);
         jl_title.setBounds(200, 10, 420, 110);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        jp_barckGround.add(jbtn_back);
+        jbtn_back.setBounds(50, 30, 50, 50);
 
         jt_suppliers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

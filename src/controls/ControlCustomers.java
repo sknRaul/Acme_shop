@@ -46,15 +46,17 @@ public class ControlCustomers implements ActionListener {
         
         this.viewCustomers.jbtn_edit.addActionListener(this);
         this.viewCustomers.jbtn_delete.addActionListener(this);
+        this.viewCustomers.jbtn_back.addActionListener(this);
         this.viewCustomers.jm_add.addActionListener(this);
         this.viewCustomers.jm_search.addActionListener(this);
         this.viewCustomers.jmi_byName.addActionListener(this);
         this.viewCustomers.jmi_byNick.addActionListener(this);
         this.viewCustomers.jmi_byState.addActionListener(this);
         this.viewCustomers.jmi_byID.addActionListener(this);
-        this.viewCustomers.jmi_sales.addActionListener(this);
+//        this.viewCustomers.jmi_sales.addActionListener(this);
         this.viewCustomers.jmi_newCustomer.addActionListener(this);
         this.viewCustomers.jmi_comeBack.addActionListener(this);
+        
     }
     
     public void inView(){
@@ -62,6 +64,7 @@ public class ControlCustomers implements ActionListener {
         this.viewCustomers.setVisible(true);
         this.viewCustomers.setResizable(true);
         this.viewCustomers.setTitle("Clientes");
+        
         //cargarInterface();
         cargarInterface();
         cargarTabla();

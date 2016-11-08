@@ -38,14 +38,23 @@ public class ControlMain implements ActionListener{
         this.viewMain.jmi_suppliers.addActionListener(this);
         this.viewMain.jmi_sales.addActionListener(this);
         this.cs.viewSuppliers.jbtn_back.addActionListener(this);
+        this.cc.viewCustomers.jbtn_back.addActionListener(this);
         this.viewMain.jmi_sales.addActionListener(this);
         this.viewMain.jm_products.addActionListener(this);
         this.viewMain.jmi_products.addActionListener(this);
+        this.cProducts.viewProducts.jbtn_back.addActionListener(this);
     }
     
     public void inView(){
         this.viewMain.setTitle("Principal");
         this.viewMain.setVisible(true);
+        this.viewMain.setLocationRelativeTo(null);
+    }
+    
+    public void inViewC(){
+        this.viewMain.setTitle("Principal");
+        this.viewMain.setVisible(true);
+        cc.viewCustomers.setVisible(false);
         this.viewMain.setLocationRelativeTo(null);
     }
     
@@ -82,5 +91,12 @@ public class ControlMain implements ActionListener{
             inView();
        else if(e.getSource() == this.viewMain.jmi_sales)
             sales();
+       else if(e.getSource().equals(this.cc.viewCustomers.jbtn_back))
+           inViewC();
+       else if (e.getSource()==this.cProducts.viewProducts.jbtn_back)
+       {
+           this.cProducts.viewProducts.setVisible(false);
+           inView();
+       }
     }
 }

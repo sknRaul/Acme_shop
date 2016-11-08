@@ -25,6 +25,7 @@ public class ControllerNewProducts implements  ActionListener{
       this.vnp.jtf_precioVenta.addActionListener(this);
       this.vnp.jtf_producto.addActionListener(this);
       this.vnp.jbtn_save.addActionListener(this);
+      this.vnp.jbtn_back.addActionListener(this);
       init_view();
       
     } 
