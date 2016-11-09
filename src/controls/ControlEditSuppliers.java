@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import models.ModelSuppliers;
 import views.ViewEditSuppliers;
 import jdda.ConnectionDB;
+import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 
 /**
@@ -37,7 +38,7 @@ public class ControlEditSuppliers implements ActionListener {
     public void showEditableData(){
         int editable = this.mas.getEditer();
         cb.Connection("acme_shop", "root", "1234");
-        String query = "Select * from provedores where id_provedor = "+editable;
+        String query = "Select * from proveedores where id_proveedor = "+editable;
         try {
             rs = cb.query(query);
             while(rs.next()){
@@ -66,8 +67,9 @@ public class ControlEditSuppliers implements ActionListener {
         String contact = this.ves.jtf_contact.getText();
         String phone = this.ves.jtf_phone.getText();
         String email = this.ves.jtf_email.getText();
-        String query = "Update provedores set nombre ="+"'"+name+"'"+", rfc ="+"'"+rfc+"'"+", calle = " +"'"+streed+"'"+", colonia = " +"'"+hood +"'"+", ciudad = "+"'"+city+"'"+", estado = "+"'"+state+"'"+", nombre_contacto = "+"'"+contact+"'"+", telefono =" +"'"+phone+"'"+", email = "+"'"+email+"'"+" where id_provedor = "+this.mas.getEditer();
+        String query = "Update proveedores set nombre ="+"'"+name+"'"+", rfc ="+"'"+rfc+"'"+", calle = " +"'"+streed+"'"+", colonia = " +"'"+hood +"'"+", ciudad = "+"'"+city+"'"+", estado = "+"'"+state+"'"+", nombre_contacto = "+"'"+contact+"'"+", telefono =" +"'"+phone+"'"+", email = "+"'"+email+"'"+" where id_proveedor = "+this.mas.getEditer();
         this.mas.add(query);
+        JOptionPane.showMessageDialog(ves, "Los datos se han guardado correctamente");
     }
 
     @Override

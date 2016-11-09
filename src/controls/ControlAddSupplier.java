@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelSuppliers;
 import views.ViewAddSupplier;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Raúl
@@ -30,6 +31,18 @@ public class ControlAddSupplier implements ActionListener{
         this.vas.setVisible(true);
     }
     
+    public void clean(){
+        this.vas.jtf_name.setText("");
+        this.vas.jtf_RFC.setText("");
+        this.vas.jtf_streed.setText("");
+        this.vas.jtf_hood.setText("");
+        this.vas.jtf_city.setText("");
+        this.vas.jcb_state.setSelectedIndex(0);
+        this.vas.jtf_contact.setText("");
+        this.vas.jtf_phone.setText("");
+        this.vas.jtf_email.setText("");
+    }
+    
     public void add(){
         String name = this.vas.jtf_name.getText();
         String rfc = this.vas.jtf_RFC.getText();
@@ -40,9 +53,10 @@ public class ControlAddSupplier implements ActionListener{
         String contact = this.vas.jtf_contact.getText();
         String phone = this.vas.jtf_phone.getText();
         String email = this.vas.jtf_email.getText();
-        
-        String query = "Insert into provedores (nombre, rfc, calle, colonia, ciudad, estado, nombre_contacto, telefono, email)"+ "values('"+name+"','"+rfc+"','"+streed+"','"+hood+"','"+city+"','"+state+"','"+contact+"','"+phone+"','"+email+"');";
+        String query = "Insert into proveedores (nombre, rfc, calle, colonia, ciudad, estado, nombre_contacto, telefono, email)"+ "values('"+name+"','"+rfc+"','"+streed+"','"+hood+"','"+city+"','"+state+"','"+contact+"','"+phone+"','"+email+"');";
         this.mas.add(query);
+        JOptionPane.showMessageDialog(vas, "El proveedor se a guardado correctamente");
+        clean();
     }
 
     @Override

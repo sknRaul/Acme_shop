@@ -48,6 +48,7 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
         jtf_phone = new javax.swing.JTextField();
         jtf_email = new javax.swing.JTextField();
         jl_email = new javax.swing.JLabel();
+        jbtn_back = new javax.swing.JButton();
         jbtn_sent = new javax.swing.JButton();
         jl_backGround = new javax.swing.JLabel();
 
@@ -210,11 +211,23 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
         jPanel1.add(jp_Container);
         jp_Container.setBounds(10, 80, 310, 400);
 
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        jPanel1.add(jbtn_back);
+        jbtn_back.setBounds(50, 30, 50, 50);
+
         jbtn_sent.setBackground(new java.awt.Color(204, 204, 0));
         jbtn_sent.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jbtn_sent.setText("Enviar");
+        jbtn_sent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        jbtn_sent.setBorder(null);
+        jbtn_sent.setBorderPainted(false);
+        jbtn_sent.setContentAreaFilled(false);
         jPanel1.add(jbtn_sent);
-        jbtn_sent.setBounds(340, 170, 110, 40);
+        jbtn_sent.setBounds(360, 180, 90, 60);
 
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jPanel1.add(jl_backGround);
@@ -247,6 +260,7 @@ public class ViewEditSuppliers extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel jPanel1;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_sent;
     public javax.swing.JComboBox<String> jcb_states;
     public javax.swing.JLabel jl_RFC;

@@ -49,8 +49,6 @@ public class ViewSuppliers extends javax.swing.JFrame {
         jmi_email = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jmi_add = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jmi_main = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -144,18 +142,6 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Revision");
-
-        jmi_main.setText("Principal");
-        jmi_main.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_mainActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jmi_main);
-
-        jMenuBar1.add(jMenu3);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,10 +157,6 @@ public class ViewSuppliers extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jmi_mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_mainActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_mainActionPerformed
 
     private void jbtn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_editActionPerformed
         // TODO add your handling code here:
@@ -225,7 +207,6 @@ public class ViewSuppliers extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenu jMenu1;
     public javax.swing.JMenu jMenu2;
-    public javax.swing.JMenu jMenu3;
     public javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_delete;
@@ -239,7 +220,6 @@ public class ViewSuppliers extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_email;
     public javax.swing.JMenuItem jmi_hood;
     public javax.swing.JMenuItem jmi_id;
-    public javax.swing.JMenuItem jmi_main;
     public javax.swing.JMenuItem jmi_name;
     public javax.swing.JMenuItem jmi_phone;
     public javax.swing.JMenuItem jmi_state;

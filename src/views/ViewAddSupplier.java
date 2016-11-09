@@ -44,12 +44,13 @@ public class ViewAddSupplier extends javax.swing.JPanel {
         jl_contact = new javax.swing.JLabel();
         jcb_state = new javax.swing.JComboBox<>();
         jl_state = new javax.swing.JLabel();
-        jbtn_sent = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jtf_phone = new javax.swing.JTextField();
         jl_phone = new javax.swing.JLabel();
+        jtf_phone = new javax.swing.JTextField();
         jtf_email = new javax.swing.JTextField();
         jl_email = new javax.swing.JLabel();
+        jbtn_sent = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jbtn_back = new javax.swing.JButton();
         jl_backGround = new javax.swing.JLabel();
 
         jPanel1.setLayout(null);
@@ -110,6 +111,21 @@ public class ViewAddSupplier extends javax.swing.JPanel {
         jl_state.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_state.setText("Estado");
 
+        jl_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jl_phone.setText("Telefono");
+
+        jtf_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jtf_phone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_phoneActionPerformed(evt);
+            }
+        });
+
+        jtf_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+
+        jl_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jl_email.setText("E-mail");
+
         javax.swing.GroupLayout jp_ContainerLayout = new javax.swing.GroupLayout(jp_Container);
         jp_Container.setLayout(jp_ContainerLayout);
         jp_ContainerLayout.setHorizontalGroup(
@@ -117,6 +133,16 @@ public class ViewAddSupplier extends javax.swing.JPanel {
             .addGroup(jp_ContainerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_ContainerLayout.createSequentialGroup()
+                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_phone)
+                            .addComponent(jl_email))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jp_ContainerLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtf_email, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jp_ContainerLayout.createSequentialGroup()
                         .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jl_hood)
@@ -129,15 +155,9 @@ public class ViewAddSupplier extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jtf_hood))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ContainerLayout.createSequentialGroup()
-                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_contact)
-                            .addComponent(jl_state))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_contact)
-                            .addGroup(jp_ContainerLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jcb_state, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jl_state)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 102, Short.MAX_VALUE)
+                        .addComponent(jcb_state, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp_ContainerLayout.createSequentialGroup()
                         .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jl_name)
@@ -147,7 +167,11 @@ public class ViewAddSupplier extends javax.swing.JPanel {
                         .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jtf_streed, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtf_RFC, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_name, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jtf_name, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ContainerLayout.createSequentialGroup()
+                        .addComponent(jl_contact)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtf_contact, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jp_ContainerLayout.setVerticalGroup(
@@ -177,67 +201,57 @@ public class ViewAddSupplier extends javax.swing.JPanel {
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb_state, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_state))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_contact)
-                    .addComponent(jtf_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jtf_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_contact))
+                .addGap(18, 18, 18)
+                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_phone)
+                    .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_email)
+                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jPanel1.add(jp_Container);
-        jp_Container.setBounds(10, 80, 320, 290);
+        jp_Container.setBounds(10, 80, 320, 380);
 
         jbtn_sent.setBackground(new java.awt.Color(204, 204, 0));
         jbtn_sent.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jbtn_sent.setText("Enviar");
+        jbtn_sent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        jbtn_sent.setBorder(null);
+        jbtn_sent.setBorderPainted(false);
+        jbtn_sent.setContentAreaFilled(false);
         jPanel1.add(jbtn_sent);
-        jbtn_sent.setBounds(330, 200, 110, 40);
+        jbtn_sent.setBounds(360, 180, 90, 60);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jtf_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-
-        jl_phone.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jl_phone.setText("Telefono");
-
-        jtf_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-
-        jl_email.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jl_email.setText("E-mail");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_phone)
-                    .addComponent(jl_email))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 61, Short.MAX_VALUE)
-                        .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jtf_email))
-                .addContainerGap())
+            .addGap(0, 320, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_phone)
-                    .addComponent(jtf_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_email)
-                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+            .addGap(0, 90, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(10, 370, 320, 90);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        jPanel1.add(jbtn_back);
+        jbtn_back.setBounds(50, 30, 50, 50);
 
         jl_backGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suppliers.jpg"))); // NOI18N
         jPanel1.add(jl_backGround);
@@ -267,10 +281,15 @@ public class ViewAddSupplier extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcb_stateActionPerformed
 
+    private void jtf_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_phoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_phoneActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_sent;
     public javax.swing.JComboBox<String> jcb_state;
     public javax.swing.JLabel jl_RFC;
