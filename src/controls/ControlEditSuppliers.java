@@ -69,7 +69,10 @@ public class ControlEditSuppliers implements ActionListener {
         String email = this.ves.jtf_email.getText();
         String query = "Update proveedores set nombre ="+"'"+name+"'"+", rfc ="+"'"+rfc+"'"+", calle = " +"'"+streed+"'"+", colonia = " +"'"+hood +"'"+", ciudad = "+"'"+city+"'"+", estado = "+"'"+state+"'"+", nombre_contacto = "+"'"+contact+"'"+", telefono =" +"'"+phone+"'"+", email = "+"'"+email+"'"+" where id_proveedor = "+this.mas.getEditer();
         this.mas.add(query);
-        JOptionPane.showMessageDialog(ves, "Los datos se han guardado correctamente");
+        if(this.mas.getError()==0)
+            JOptionPane.showMessageDialog(ves, "Los datos se han guardado correctamente");
+        else
+            JOptionPane.showMessageDialog(ves, "El telefono se escribe con números\nen diez digitos");
     }
 
     @Override

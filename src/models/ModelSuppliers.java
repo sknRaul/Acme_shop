@@ -13,12 +13,11 @@ public class ModelSuppliers {
     ConnectionDB cb = new ConnectionDB();
     
     private int editer;
-    
-    
+    private int error;
     
     public void add(String insert){
         cb.Connection("acme_shop", "root", "1234");
-        cb.add(insert);
+        setError(cb.add(insert));
     }
 
     /**
@@ -33,5 +32,19 @@ public class ModelSuppliers {
      */
     public void setEditer(int editer) {
         this.editer = editer;
+    }
+
+    /**
+     * @return the error
+     */
+    public int getError() {
+        return error;
+    }
+
+    /**
+     * @param error the error to set
+     */
+    public void setError(int error) {
+        this.error = error;
     }
 }

@@ -55,8 +55,12 @@ public class ControlAddSupplier implements ActionListener{
         String email = this.vas.jtf_email.getText();
         String query = "Insert into proveedores (nombre, rfc, calle, colonia, ciudad, estado, nombre_contacto, telefono, email)"+ "values('"+name+"','"+rfc+"','"+streed+"','"+hood+"','"+city+"','"+state+"','"+contact+"','"+phone+"','"+email+"');";
         this.mas.add(query);
-        JOptionPane.showMessageDialog(vas, "El proveedor se a guardado correctamente");
-        clean();
+        if(this.mas.getError()==0){
+            JOptionPane.showMessageDialog(vas, "El proveedor se a guardado correctamente");
+            clean();
+        }else{
+            JOptionPane.showMessageDialog(vas, "Asegurate de escribir\n el telefono con números con 10 digitos");
+        }
     }
 
     @Override
