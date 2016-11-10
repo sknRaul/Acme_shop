@@ -43,6 +43,10 @@ public class ControlMain implements ActionListener{
         this.viewMain.jm_products.addActionListener(this);
         this.viewMain.jmi_products.addActionListener(this);
         this.cProducts.viewProducts.jbtn_back.addActionListener(this);
+        this.viewMain.jmi_customersReport.addActionListener(this);
+        this.viewMain.jmi_productsReport.addActionListener(this);
+        this.viewMain.jmi_salesReport.addActionListener(this);
+        this.viewMain.jmi_suppliersReport.addActionListener(this);
     }
     
     public void inView(){
@@ -97,6 +101,11 @@ public class ControlMain implements ActionListener{
        {
            this.cProducts.viewProducts.setVisible(false);
            inView();
-       }
+       }else if(e.getSource() == this.viewMain.jmi_suppliersReport)
+           this.modelMain.generate("src\\reports\\SuppliersReport.jrxml");
+       else if (e.getSource() == this.viewMain.jmi_customersReport)
+           this.modelMain.generate("src\\reports\\CustomersReport.jrxml");
+        else if (e.getSource() == this.viewMain.jmi_productsReport)
+           this.modelMain.generate("src\\reports\\ProductsReport.jrxml");
     }
 }

@@ -29,7 +29,7 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jm_suppliers = new javax.swing.JMenu();
         jmi_suppliers = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jmi_Customers = new javax.swing.JMenuItem();
@@ -37,17 +37,22 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_sales = new javax.swing.JMenuItem();
         jm_products = new javax.swing.JMenu();
         jmi_products = new javax.swing.JMenuItem();
+        jm_reports = new javax.swing.JMenu();
+        jmi_suppliersReport = new javax.swing.JMenuItem();
+        jmi_customersReport = new javax.swing.JMenuItem();
+        jmi_productsReport = new javax.swing.JMenuItem();
+        jmi_salesReport = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Proveedores");
+        jm_suppliers.setText("Proveedores");
 
         jmi_suppliers.setText("Proveedores");
-        jMenu1.add(jmi_suppliers);
+        jm_suppliers.add(jmi_suppliers);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jm_suppliers);
 
         jMenu2.setText("Clientes");
 
@@ -69,6 +74,22 @@ public class ViewMain extends javax.swing.JFrame {
         jm_products.add(jmi_products);
 
         jMenuBar1.add(jm_products);
+
+        jm_reports.setText("Reportes");
+
+        jmi_suppliersReport.setText("Proveedores");
+        jm_reports.add(jmi_suppliersReport);
+
+        jmi_customersReport.setText("Clientes");
+        jm_reports.add(jmi_customersReport);
+
+        jmi_productsReport.setText("Productos");
+        jm_reports.add(jmi_productsReport);
+
+        jmi_salesReport.setText("Ventas");
+        jm_reports.add(jmi_salesReport);
+
+        jMenuBar1.add(jm_reports);
 
         setJMenuBar(jMenuBar1);
 
@@ -126,15 +147,20 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     public javax.swing.JMenu jm_products;
+    public javax.swing.JMenu jm_reports;
     public javax.swing.JMenu jm_sales;
+    private javax.swing.JMenu jm_suppliers;
     public javax.swing.JMenuItem jmi_Customers;
+    public javax.swing.JMenuItem jmi_customersReport;
     public javax.swing.JMenuItem jmi_products;
+    public javax.swing.JMenuItem jmi_productsReport;
     public javax.swing.JMenuItem jmi_sales;
+    public javax.swing.JMenuItem jmi_salesReport;
     public javax.swing.JMenuItem jmi_suppliers;
+    public javax.swing.JMenuItem jmi_suppliersReport;
     // End of variables declaration//GEN-END:variables
 }
