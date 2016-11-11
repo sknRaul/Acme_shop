@@ -78,6 +78,11 @@ public class ViewMain extends javax.swing.JFrame {
         jm_reports.setText("Reportes");
 
         jmi_suppliersReport.setText("Proveedores");
+        jmi_suppliersReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_suppliersReportActionPerformed(evt);
+            }
+        });
         jm_reports.add(jmi_suppliersReport);
 
         jmi_customersReport.setText("Clientes");
@@ -107,9 +112,14 @@ public class ViewMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jmi_suppliersReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_suppliersReportActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_suppliersReportActionPerformed
 
     /**
      * @param args the command line arguments

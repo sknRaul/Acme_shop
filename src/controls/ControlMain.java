@@ -102,10 +102,10 @@ public class ControlMain implements ActionListener{
            this.cProducts.viewProducts.setVisible(false);
            inView();
        }else if(e.getSource() == this.viewMain.jmi_suppliersReport)
-           this.modelMain.generate("src\\reports\\SuppliersReport.jrxml");
+           this.modelMain.generate("src\\reports\\SuppliersReport.jrxml",this.viewMain);
        else if (e.getSource() == this.viewMain.jmi_customersReport)
-           this.modelMain.generate("src\\reports\\CustomersReport.jrxml");
+           this.modelMain.generate("src\\reports\\CustomersReport.jrxml",this.viewMain);
         else if (e.getSource() == this.viewMain.jmi_productsReport)
-           this.modelMain.generate("src\\reports\\ProductsReport.jrxml");
+           this.modelMain.generate("src\\reports\\ProductsReport.jrxml",this.viewMain);
     }
 }

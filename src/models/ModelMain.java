@@ -11,21 +11,24 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import jdda.ConnectionDB;
+import views.ViewMain;
 /**
  *
  * @author panda
  */
 public class ModelMain {
     public ConnectionDB con = new ConnectionDB();
-    
-    public void generate(String address){
+    private ViewMain viewMain;
+    JasperViewer window;
+    public void generate(String address, ViewMain viewMain){
         try {
+            this.viewMain = viewMain;
             JasperReport report = JasperCompileManager.compileReport(address);
-            System.out.printf("Archivo cargado");
             JasperPrint viewReport = JasperFillManager.fillReport(report, null, con.Connection("acme_shop", "root", "1234"));
-            System.out.printf("Archivo llenado");
-            JasperViewer.viewReport(viewReport);
-            System.out.printf("Mostrando archivo");
+            //JasperViewer.viewReport(viewReport);
+            window = new JasperViewer(viewReport,false);
+            window.setDefaultCloseOperation(viewMain.DISPOSE_ON_CLOSE);
+            window.setVisible(true);
         } catch (Exception e) {
             System.err.printf("Error al generar el reporte");
         }
