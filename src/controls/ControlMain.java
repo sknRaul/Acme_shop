@@ -107,5 +107,7 @@ public class ControlMain implements ActionListener{
            this.modelMain.generate("src\\reports\\CustomersReport.jrxml",this.viewMain);
         else if (e.getSource() == this.viewMain.jmi_productsReport)
            this.modelMain.generate("src\\reports\\ProductsReport.jrxml",this.viewMain);
+        else if (e.getSource() == this.viewMain.jmi_salesReport)
+           this.modelMain.generate("src\\reports\\SalesReport.jrxml",this.viewMain);
     }
 }

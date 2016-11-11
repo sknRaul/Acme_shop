@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="6e311e39-2b98-49b3-8c0a-39b98f019828">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.y" value="4"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
@@ -66,14 +66,14 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="54" isBold="false" pdfFontName="Helvetica"/>
 				</textElement>
-				<text><![CDATA[SILHOUETTE TITLE]]></text>
+				<text><![CDATA[Ninja sin comics]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="232" y="67" width="568" height="37" uuid="68508388-cdb8-4621-aa1c-6dd1993c4c42"/>
 				<textElement textAlignment="Right">
 					<font size="26"/>
 				</textElement>
-				<text><![CDATA[Silhouette SubTitle]]></text>
+				<text><![CDATA[Productos]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -85,28 +85,28 @@
 			<frame>
 				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666" uuid="839d80db-7751-41ef-b6d6-6ffbb8fceef8"/>
 				<staticText>
-					<reportElement style="Column header" x="0" y="0" width="117" height="15" uuid="482c1db3-7740-47b1-aa96-62386d40a372"/>
-					<text><![CDATA[id_producto]]></text>
+					<reportElement style="Column header" x="0" y="0" width="39" height="15" uuid="482c1db3-7740-47b1-aa96-62386d40a372"/>
+					<text><![CDATA[ID]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="117" y="0" width="117" height="15" uuid="17701d27-20ee-4636-91a7-d51ef788cdb9"/>
-					<text><![CDATA[producto]]></text>
+					<reportElement style="Column header" x="39" y="0" width="132" height="15" uuid="17701d27-20ee-4636-91a7-d51ef788cdb9"/>
+					<text><![CDATA[Producto]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="234" y="0" width="117" height="15" uuid="6ff60788-fe79-4bb2-8295-1953f6c1c07c"/>
-					<text><![CDATA[descripcion]]></text>
+					<reportElement style="Column header" x="171" y="0" width="269" height="15" uuid="6ff60788-fe79-4bb2-8295-1953f6c1c07c"/>
+					<text><![CDATA[Descripcion]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="351" y="0" width="117" height="15" uuid="1817ddff-bab0-4f88-bc17-47e8e5674f22"/>
-					<text><![CDATA[precio_compra]]></text>
+					<reportElement style="Column header" x="440" y="0" width="67" height="15" uuid="1817ddff-bab0-4f88-bc17-47e8e5674f22"/>
+					<text><![CDATA[P/Compra]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="468" y="0" width="117" height="15" uuid="9e2d7482-2c42-456e-a692-885f6970ab0c"/>
-					<text><![CDATA[precio_venta]]></text>
+					<reportElement style="Column header" x="507" y="0" width="78" height="15" uuid="9e2d7482-2c42-456e-a692-885f6970ab0c"/>
+					<text><![CDATA[P/Venta]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="585" y="0" width="117" height="15" uuid="5363c142-288c-4dca-8d17-ba667d04fb72"/>
-					<text><![CDATA[existencias]]></text>
+					<text><![CDATA[Existencias]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -116,23 +116,23 @@
 			<frame>
 				<reportElement x="97" y="1" width="705" height="15" uuid="bc097cb1-0c68-4e7a-ba31-f4e6742de6d2"/>
 				<textField>
-					<reportElement style="Detail" x="0" y="0" width="117" height="15" uuid="b18b9f1b-6137-4ee5-83d1-04eeb6e3253d"/>
+					<reportElement style="Detail" x="0" y="0" width="39" height="15" uuid="b18b9f1b-6137-4ee5-83d1-04eeb6e3253d"/>
 					<textFieldExpression><![CDATA[$F{id_producto}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="117" y="0" width="117" height="15" uuid="8849fbdf-224e-4b36-820a-108399089ed0"/>
+					<reportElement style="Detail" x="39" y="0" width="132" height="15" uuid="8849fbdf-224e-4b36-820a-108399089ed0"/>
 					<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="234" y="0" width="117" height="15" uuid="f2e7d37f-7fb6-4dac-b269-3e738558496d"/>
+					<reportElement style="Detail" x="171" y="0" width="269" height="15" uuid="f2e7d37f-7fb6-4dac-b269-3e738558496d"/>
 					<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="351" y="0" width="117" height="15" uuid="9df49427-dacc-47ec-b328-7156f33019b4"/>
+					<reportElement style="Detail" x="440" y="0" width="67" height="15" uuid="9df49427-dacc-47ec-b328-7156f33019b4"/>
 					<textFieldExpression><![CDATA[$F{precio_compra}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="468" y="0" width="117" height="15" uuid="9a992b19-5640-4cbc-9fe6-9f5f879f3039"/>
+					<reportElement style="Detail" x="507" y="0" width="78" height="15" uuid="9a992b19-5640-4cbc-9fe6-9f5f879f3039"/>
 					<textFieldExpression><![CDATA[$F{precio_venta}]]></textFieldExpression>
 				</textField>
 				<textField>
@@ -165,7 +165,7 @@
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Silhouette Title Report]]></text>
+				<text><![CDATA[Productos de Ninja sin comics]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="49b50b2e-83c6-4672-a440-b09f4b122e2e">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="43"/>
+	<property name="ireport.y" value="42"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
@@ -45,14 +45,14 @@
 		<groupHeader>
 			<band height="40">
 				<textField>
-					<reportElement style="SubTitle" x="143" y="13" width="657" height="24" forecolor="#000000" uuid="ff82dae1-8dfe-4a98-bc1f-a297e7b49979"/>
+					<reportElement style="SubTitle" x="97" y="13" width="657" height="24" forecolor="#000000" uuid="ff82dae1-8dfe-4a98-bc1f-a297e7b49979"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement mode="Opaque" x="97" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="9d425486-3257-4ff8-9bf7-9b9baa065578"/>
+					<reportElement mode="Opaque" x="61" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="9d425486-3257-4ff8-9bf7-9b9baa065578"/>
 				</rectangle>
 			</band>
 		</groupHeader>
@@ -67,30 +67,30 @@
 	<background>
 		<band height="575" splitType="Stretch">
 			<rectangle>
-				<reportElement x="-20" y="234" width="20" height="241" backcolor="#000000" uuid="1fd22b1c-51c2-408e-8a94-794a49b3452e"/>
+				<reportElement x="-20" y="274" width="20" height="241" backcolor="#000000" uuid="1fd22b1c-51c2-408e-8a94-794a49b3452e"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666" uuid="1c28762e-13a0-43f4-9cd3-1934a599b717"/>
+				<reportElement mode="Opaque" x="-20" y="515" width="45" height="60" backcolor="#666666" uuid="e6ffba0e-aabd-44f1-afc9-f653bc06a780"/>
 				<textField>
-					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="875b2995-924e-4830-a2ea-f9660af3b8d5"/>
+					<reportElement style="Column header" x="0" y="0" width="42" height="28" forecolor="#000000" uuid="eac7ec75-2b54-489e-a4fe-b5446deac163"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+						<font size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="587b8cc8-5168-4786-b1b1-00d2e1f2f9a0"/>
+					<reportElement style="Column header" x="0" y="28" width="42" height="24" forecolor="#000000" uuid="e50b2043-fdf3-4e63-aa4b-bce82a0d9e68"/>
 					<box leftPadding="4" rightPadding="4"/>
 					<textElement textAlignment="Center">
-						<font size="16" isBold="false"/>
+						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF" uuid="7af11634-0f1e-4ce5-a8c0-8ad11485b188"/>
+					<reportElement mode="Transparent" x="11" y="27" width="20" height="1" backcolor="#FFFFFF" uuid="8def0468-8d48-4909-a975-7f42ed5ad1fe"/>
 				</line>
 			</frame>
 		</band>
@@ -102,14 +102,14 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="54" isBold="false" pdfFontName="Helvetica"/>
 				</textElement>
-				<text><![CDATA[SILHOUETTE TITLE]]></text>
+				<text><![CDATA[Ninja sin comics]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="232" y="67" width="568" height="37" uuid="4fd9f827-e138-4963-ba51-40e7bca49c13"/>
 				<textElement textAlignment="Right">
 					<font size="26"/>
 				</textElement>
-				<text><![CDATA[Silhouette SubTitle]]></text>
+				<text><![CDATA[Proveedores]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -119,42 +119,42 @@
 	<columnHeader>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666" uuid="6def327d-2fc9-4283-8857-90e7c3b6e0f3"/>
+				<reportElement mode="Opaque" x="59" y="5" width="743" height="20" backcolor="#666666" uuid="6def327d-2fc9-4283-8857-90e7c3b6e0f3"/>
 				<staticText>
-					<reportElement style="Column header" x="0" y="0" width="78" height="15" uuid="b9215009-3ba3-4683-8cc8-c82c73b379e5"/>
-					<text><![CDATA[id_proveedor]]></text>
+					<reportElement style="Column header" x="0" y="0" width="37" height="15" uuid="b9215009-3ba3-4683-8cc8-c82c73b379e5"/>
+					<text><![CDATA[ID]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="78" y="0" width="78" height="15" uuid="8596e887-e866-4cc3-97a8-a3b70bfae21b"/>
-					<text><![CDATA[nombre]]></text>
+					<reportElement style="Column header" x="39" y="0" width="78" height="15" uuid="8596e887-e866-4cc3-97a8-a3b70bfae21b"/>
+					<text><![CDATA[Nombre]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="156" y="0" width="78" height="15" uuid="1608b828-2e16-4083-906b-4b6a76ab19d1"/>
-					<text><![CDATA[rfc]]></text>
+					<reportElement style="Column header" x="117" y="0" width="117" height="15" uuid="1608b828-2e16-4083-906b-4b6a76ab19d1"/>
+					<text><![CDATA[RFC]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="234" y="0" width="78" height="15" uuid="54bba035-7fd2-4b49-9dec-a019c3a4b167"/>
-					<text><![CDATA[calle]]></text>
+					<text><![CDATA[Calle]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="312" y="0" width="78" height="15" uuid="960e5bde-13f5-41c7-a5b9-d06ab4859ae7"/>
-					<text><![CDATA[colonia]]></text>
+					<text><![CDATA[Colonia]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="390" y="0" width="78" height="15" uuid="e8847e67-f8c2-4751-b54a-007d7fc0503c"/>
-					<text><![CDATA[ciudad]]></text>
+					<text><![CDATA[Ciudad]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="468" y="0" width="78" height="15" uuid="20d35f1d-e99d-4f62-b0f4-2685c69c38b7"/>
-					<text><![CDATA[nombre_contacto]]></text>
+					<text><![CDATA[Contacto]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="546" y="0" width="78" height="15" uuid="c67c08dd-eeef-4696-8f54-9db46fee46a2"/>
-					<text><![CDATA[telefono]]></text>
+					<text><![CDATA[Telefono]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="624" y="0" width="78" height="15" uuid="a0288607-922b-451a-884f-b5c41be946b3"/>
-					<text><![CDATA[email]]></text>
+					<reportElement style="Column header" x="624" y="0" width="117" height="15" uuid="a0288607-922b-451a-884f-b5c41be946b3"/>
+					<text><![CDATA[E-mail]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -162,17 +162,17 @@
 	<detail>
 		<band height="21" splitType="Stretch">
 			<frame>
-				<reportElement x="97" y="1" width="705" height="15" uuid="4660d6ac-a449-4c3b-bc49-b895ad12c3f6"/>
+				<reportElement x="59" y="1" width="743" height="15" uuid="4660d6ac-a449-4c3b-bc49-b895ad12c3f6"/>
 				<textField>
-					<reportElement style="Detail" x="0" y="0" width="78" height="15" uuid="7c9c7a19-0311-44a1-b59f-363eb8c7d0dc"/>
+					<reportElement style="Detail" x="0" y="0" width="37" height="15" uuid="7c9c7a19-0311-44a1-b59f-363eb8c7d0dc"/>
 					<textFieldExpression><![CDATA[$F{id_proveedor}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="78" y="0" width="78" height="15" uuid="fc23d686-1f7a-487d-b211-100cd55d3eb8"/>
+					<reportElement style="Detail" x="39" y="0" width="78" height="15" uuid="fc23d686-1f7a-487d-b211-100cd55d3eb8"/>
 					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="156" y="0" width="78" height="15" uuid="0c9fd56d-8064-4c0a-af7a-4499398483ea"/>
+					<reportElement style="Detail" x="117" y="0" width="117" height="15" uuid="0c9fd56d-8064-4c0a-af7a-4499398483ea"/>
 					<textFieldExpression><![CDATA[$F{rfc}]]></textFieldExpression>
 				</textField>
 				<textField>
@@ -196,7 +196,7 @@
 					<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="624" y="0" width="78" height="15" uuid="9b857625-73c4-4f95-a2cd-dd8262cacae4"/>
+					<reportElement style="Detail" x="624" y="0" width="117" height="15" uuid="9b857625-73c4-4f95-a2cd-dd8262cacae4"/>
 					<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
 				</textField>
 			</frame>
@@ -225,7 +225,7 @@
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Silhouette Title Report]]></text>
+				<text><![CDATA[Proveedores de Ninja sin comics]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

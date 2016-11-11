@@ -28,6 +28,8 @@ public class ModelMain {
             //JasperViewer.viewReport(viewReport);
             window = new JasperViewer(viewReport,false);
             window.setDefaultCloseOperation(viewMain.DISPOSE_ON_CLOSE);
+            window.setSize(window.getMaximumSize());
+            window.setExtendedState(window.MAXIMIZED_BOTH);
             window.setVisible(true);
         } catch (Exception e) {
             System.err.printf("Error al generar el reporte");
