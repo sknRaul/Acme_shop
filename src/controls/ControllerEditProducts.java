@@ -10,6 +10,7 @@ import models.ModelProducts;
 import views.ViewEditProducts;
 import jdda.ConnectionDB;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Diego
@@ -31,10 +32,11 @@ public ControllerEditProducts(ModelProducts mp,ViewEditProducts vep){
 
 public void init_view(){
         this.vep.setVisible(true);
+        this.vep.setSize(960, 540);
     }
 
 public void showEditableData(){
-        int editable = this.mep.getEditer();
+        int editable = this.mep.getEditar();
         cb.Connection("acme_shop", "root", "1234");
         String query = "Select * from productos where id_producto = "+editable;
         try {
@@ -58,8 +60,12 @@ public void showEditableData(){
         String precioVenta = this.vep.jtf_precioVentae.getText();
         String existencias = this.vep.jtf_existenciase.getText();
         String descripcion = this.vep.jta_descripcione.getText();
-        String query = "Update producto set producto ="+"'"+producto+"'"+", descripcion ="+"'"+descripcion+"'"+", precio_compra = " +"'"+precioCompra+"'"+", precio_venta = " +"'"+precioVenta +"'"+", existencias = "+"'"+existencias+"'"+" where id_provedor = "+this.mep.getEditer();
+        String query = "Update productos set producto ="+"'"+producto+"'"+", descripcion ="+"'"+descripcion+"'"+", precio_compra = " +"'"+precioCompra+"'"+", precio_venta = " +"'"+precioVenta +"'"+", existencias = "+"'"+existencias+"'"+" where id_producto = "+this.mep.getEditar();
         this.mep.add(query);
+        if(this.mep.getErrores()==0)
+            JOptionPane.showMessageDialog(vep, "Las modificaciones se han guardado correctamente");
+        
+    
     }
     @Override
     public void actionPerformed(ActionEvent e) {

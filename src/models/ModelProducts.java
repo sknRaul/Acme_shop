@@ -14,8 +14,8 @@ import jdda.ConnectionDB;
 public class ModelProducts {
      ConnectionDB cb = new ConnectionDB();
     
-    private int editer;
-    
+    private int editar;
+    private int errores;
     
     
     public void add(String insert){
@@ -24,16 +24,32 @@ public class ModelProducts {
     }
 
     /**
-     * @return the editer
+     * @return the editar
      */
-    public int getEditer() {
-        return editer;
+    public int getEditar() {
+        return editar;
     }
 
     /**
-     * @param editer the editer to set
+     * @param editar the editar to set
      */
-    public void setEditer(int editer) {
-        this.editer = editer;
+    public void setEditar(int editar) {
+        this.editar = editar;
+    }
+
+    /**
+     * @return the errores
+     */
+    public int getErrores() {
+        return errores;
+    }
+
+    /**
+     * @param errores the errores to set
+     */
+    public void setErrores(int errores) {
+        this.errores = errores;
     }
 }
+
+   

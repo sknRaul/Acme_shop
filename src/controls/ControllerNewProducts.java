@@ -6,6 +6,7 @@
 package controls;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import models.ModelProducts;
 import views.ViewNewProducts;
 /**
@@ -29,7 +30,13 @@ public class ControllerNewProducts implements  ActionListener{
       init_view();
       
     } 
-    
+    public void clean(){
+        this.vnp.jta_descripcion.setText("");
+        this.vnp.jtf_existencias.setText("");
+        this.vnp.jtf_precioCompra.setText("");
+        this.vnp.jtf_precioVenta.setText("");
+        this.vnp.jtf_producto.setText("");
+    }
     public void init_view(){
         this.vnp.setVisible(true);
     }
@@ -43,6 +50,10 @@ public class ControllerNewProducts implements  ActionListener{
         
         String query = "Insert into productos (producto, descripcion, precio_compra, precio_venta, existencias)"+ "values('"+producto+"','"+descripcion+"','"+precioCompra+"','"+precioVenta+"','"+existencias+"');";
         this.mnp.add(query);
+        if(this.mnp.getErrores()==0){
+            JOptionPane.showMessageDialog(vnp, "El producto se han guardado correctamente");
+            clean();
+        }
     }
     @Override
     public void actionPerformed(ActionEvent e) {

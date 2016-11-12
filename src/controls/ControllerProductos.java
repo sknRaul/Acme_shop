@@ -44,6 +44,7 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.jmi_nuevoProducto.addActionListener(this);
         this.cep.vep.jbtn_back.addActionListener(this);
         this.cnp.vnp.jbtn_back.addActionListener(this);
+        this.viewProducts.jbtn_actualizar.addActionListener(this);
         //this.viewProducts.jbtn_back.addActionListener(this);
         
     }
@@ -59,7 +60,7 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.setContentPane(cnp.vnp);
         this.viewProducts.revalidate();
         this.viewProducts.repaint();
-        this.viewProducts.setSize(this.cnp.vnp.getSize());
+        this.cnp.vnp.setSize(998, 640);
     }
     
     public void back(){
@@ -76,6 +77,9 @@ public class ControllerProductos implements ActionListener {
         cb.Connection("acme_shop", "root", "1234");
         int colum = this.viewProducts.jt_productos.getSelectedColumn();
         int row = this.viewProducts.jt_productos.getSelectedRow();
+        String products = ""+this.viewProducts.jt_productos.getValueAt(row, 1);
+        if(JOptionPane.showConfirmDialog(viewProducts, "Deseas borrar el producto \n"+products,"Borrar", 2, 2) == 0){
+           
         try {
             int value = (int) this.viewProducts.jt_productos.getValueAt(row, 0);
             cb.delete("delete from productos where id_producto ="+value);
@@ -85,6 +89,7 @@ public class ControllerProductos implements ActionListener {
         }
         clean();
         showData("Select * from productos");
+        }
     }
     
     
@@ -96,8 +101,11 @@ public class ControllerProductos implements ActionListener {
         
         int row = this.viewProducts.jt_productos.getSelectedRow();
         int editer = (int)this.viewProducts.jt_productos.getValueAt(row, 0);
-        this.cep.mep.setEditer(editer);
+        this.cep.mep.setEditar(editer);
         this.cep.showEditableData();
+    }
+    public void refresh(){
+        showData("Select * from productos");
     }
     
     public void clean(){
@@ -150,6 +158,9 @@ public class ControllerProductos implements ActionListener {
             back();
         else if (e.getSource()==this.cnp.vnp.jbtn_back)
             back();
+        else if (e.getSource()==this.viewProducts.jbtn_actualizar)
+            refresh();
+            
     }
     
     

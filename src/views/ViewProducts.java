@@ -33,6 +33,7 @@ public class ViewProducts extends javax.swing.JFrame {
         jbtn_edit = new javax.swing.JButton();
         jbtn_back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jbtn_actualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_productos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -69,7 +70,7 @@ public class ViewProducts extends javax.swing.JFrame {
             }
         });
         jp_BackGround.add(jbtn_borrar);
-        jbtn_borrar.setBounds(110, 350, 80, 80);
+        jbtn_borrar.setBounds(70, 350, 80, 80);
 
         jbtn_edit.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
         jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
@@ -85,7 +86,7 @@ public class ViewProducts extends javax.swing.JFrame {
             }
         });
         jp_BackGround.add(jbtn_edit);
-        jbtn_edit.setBounds(300, 350, 80, 70);
+        jbtn_edit.setBounds(180, 350, 80, 80);
 
         jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
         jbtn_back.setBorder(null);
@@ -100,6 +101,17 @@ public class ViewProducts extends javax.swing.JFrame {
         jLabel3.setText("Informacion exisente:");
         jp_BackGround.add(jLabel3);
         jLabel3.setBounds(30, 94, 220, 30);
+
+        jbtn_actualizar.setFont(new java.awt.Font("Bookman Old Style", 0, 11)); // NOI18N
+        jbtn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/button-refresh-29881.jpg"))); // NOI18N
+        jbtn_actualizar.setText("ACTUALIZAR");
+        jbtn_actualizar.setBorder(null);
+        jbtn_actualizar.setBorderPainted(false);
+        jbtn_actualizar.setContentAreaFilled(false);
+        jbtn_actualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_actualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jp_BackGround.add(jbtn_actualizar);
+        jbtn_actualizar.setBounds(300, 350, 80, 80);
 
         jt_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -201,6 +213,7 @@ public class ViewProducts extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ViewProducts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -216,6 +229,7 @@ public class ViewProducts extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JButton jbtn_actualizar;
     public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_borrar;
     public javax.swing.JButton jbtn_edit;
