@@ -47,8 +47,8 @@ public class ViewSales extends javax.swing.JPanel {
         jtf_idSeller = new javax.swing.JTextField();
         jl_idSeller = new javax.swing.JLabel();
         jbtn_searchByName = new javax.swing.JButton();
-        jbtn_add = new javax.swing.JButton();
         jbtn_closeSale = new javax.swing.JButton();
+        jbtn_back = new javax.swing.JButton();
         jbtn_cancelSale = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_sale = new javax.swing.JTable();
@@ -102,13 +102,11 @@ public class ViewSales extends javax.swing.JPanel {
 
         jl_idProduct.setText("ID:");
 
-        jbtn_searchProduct.setText("Buscar");
+        jbtn_searchProduct.setText("Agregar");
 
         jl_idSeller.setText("ID:");
 
         jbtn_searchByName.setText("Nombre");
-
-        jbtn_add.setText("Agregar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,15 +143,10 @@ public class ViewSales extends javax.swing.JPanel {
                                 .addComponent(jl_idProduct)
                                 .addGap(18, 18, 18)
                                 .addComponent(jtf_idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jbtn_searchProduct)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jbtn_searchByName))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addComponent(jbtn_add))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbtn_searchProduct)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbtn_searchByName))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jl_rfc)
@@ -164,7 +157,7 @@ public class ViewSales extends javax.swing.JPanel {
                         .addComponent(jl_customer)
                         .addGap(18, 18, 18)
                         .addComponent(jtf_customer, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,20 +191,13 @@ public class ViewSales extends javax.swing.JPanel {
                     .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbtn_searchProduct)
-                            .addComponent(jbtn_searchByName))
-                        .addGap(5, 5, 5)
-                        .addComponent(jbtn_add)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_idProduct))
-                        .addGap(23, 23, 23))))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtf_idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_idProduct)
+                    .addComponent(jbtn_searchByName)
+                    .addComponent(jbtn_searchProduct))
+                .addGap(21, 21, 21))
         );
 
         add(jPanel1);
@@ -225,6 +211,15 @@ public class ViewSales extends javax.swing.JPanel {
         });
         add(jbtn_closeSale);
         jbtn_closeSale.setBounds(420, 160, 130, 30);
+
+        jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
+        jbtn_back.setBorder(null);
+        jbtn_back.setBorderPainted(false);
+        jbtn_back.setContentAreaFilled(false);
+        jbtn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_back.setDefaultCapable(false);
+        add(jbtn_back);
+        jbtn_back.setBounds(50, 30, 50, 50);
 
         jbtn_cancelSale.setText("Cancelar Venta");
         add(jbtn_cancelSale);
@@ -329,7 +324,7 @@ public class ViewSales extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JButton jbtn_add;
+    public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_cancelSale;
     public javax.swing.JButton jbtn_closeSale;
     public javax.swing.JButton jbtn_newSale;
@@ -349,7 +344,7 @@ public class ViewSales extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_customer;
     public javax.swing.JTextField jtf_idCustomer;
     public javax.swing.JTextField jtf_idProduct;
-    private javax.swing.JTextField jtf_idSeller;
+    public javax.swing.JTextField jtf_idSeller;
     public javax.swing.JTextField jtf_rfc;
     public javax.swing.JTextField jtf_seller;
     public javax.swing.JTextField jtf_taxes;

@@ -44,7 +44,10 @@ public class ViewNewCustomers extends javax.swing.JPanel {
         jtf_city = new javax.swing.JTextField();
         jtf_suburb = new javax.swing.JTextField();
         jtf_street = new javax.swing.JTextField();
+        jtf_rfc = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jtf_tNumber = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jtf_email = new javax.swing.JTextField();
@@ -62,43 +65,43 @@ public class ViewNewCustomers extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre(s):");
         add(jLabel1);
-        jLabel1.setBounds(50, 140, 75, 19);
+        jLabel1.setBounds(50, 120, 75, 19);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Apellido Pat.");
         add(jLabel2);
-        jLabel2.setBounds(180, 140, 87, 19);
+        jLabel2.setBounds(180, 120, 87, 19);
 
         jtf_name.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         add(jtf_name);
-        jtf_name.setBounds(50, 160, 120, 25);
+        jtf_name.setBounds(50, 140, 120, 25);
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Apellido Mat.");
         add(jLabel3);
-        jLabel3.setBounds(310, 140, 92, 19);
+        jLabel3.setBounds(310, 120, 92, 19);
 
         jtf_lastNameP.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         add(jtf_lastNameP);
-        jtf_lastNameP.setBounds(180, 160, 120, 25);
+        jtf_lastNameP.setBounds(180, 140, 120, 25);
 
         jtf_lastNameM.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         add(jtf_lastNameM);
-        jtf_lastNameM.setBounds(310, 160, 130, 25);
+        jtf_lastNameM.setBounds(310, 140, 130, 25);
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Dirección:");
         add(jLabel4);
-        jLabel4.setBounds(190, 270, 91, 23);
+        jLabel4.setBounds(190, 260, 91, 23);
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Información Personal.");
         add(jLabel5);
-        jLabel5.setBounds(140, 110, 192, 23);
+        jLabel5.setBounds(140, 90, 192, 23);
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,31 +149,52 @@ public class ViewNewCustomers extends javax.swing.JPanel {
         add(jtf_street);
         jtf_street.setBounds(120, 300, 92, 25);
 
+        jtf_rfc.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jtf_rfc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_rfcActionPerformed(evt);
+            }
+        });
+        add(jtf_rfc);
+        jtf_rfc.setBounds(310, 220, 130, 25);
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("RFC:");
+        add(jLabel17);
+        jLabel17.setBounds(270, 220, 30, 20);
+
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Telefono:");
         add(jLabel11);
-        jLabel11.setBounds(50, 200, 62, 19);
+        jLabel11.setBounds(50, 180, 62, 19);
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("de Contacto:");
+        add(jLabel16);
+        jLabel16.setBounds(50, 230, 89, 19);
 
         jtf_tNumber.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         add(jtf_tNumber);
-        jtf_tNumber.setBounds(120, 200, 120, 25);
+        jtf_tNumber.setBounds(120, 180, 120, 25);
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("e-mail:");
         add(jLabel12);
-        jLabel12.setBounds(250, 200, 50, 19);
+        jLabel12.setBounds(250, 180, 50, 19);
 
         jtf_email.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         add(jtf_email);
-        jtf_email.setBounds(310, 200, 130, 25);
+        jtf_email.setBounds(310, 180, 130, 25);
 
         jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Nombre de Contacto:");
+        jLabel13.setText("Nombre");
         add(jLabel13);
-        jLabel13.setBounds(50, 240, 148, 19);
+        jLabel13.setBounds(50, 210, 60, 19);
 
         jtf_nick.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jtf_nick.addActionListener(new java.awt.event.ActionListener() {
@@ -179,14 +203,14 @@ public class ViewNewCustomers extends javax.swing.JPanel {
             }
         });
         add(jtf_nick);
-        jtf_nick.setBounds(220, 240, 220, 25);
+        jtf_nick.setBounds(150, 220, 100, 25);
 
         jbtn_accept.setBackground(new java.awt.Color(255, 255, 255));
         jbtn_accept.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jbtn_accept.setForeground(new java.awt.Color(51, 51, 255));
         jbtn_accept.setText("Aceptar");
         add(jbtn_accept);
-        jbtn_accept.setBounds(270, 380, 153, 43);
+        jbtn_accept.setBounds(270, 370, 153, 43);
 
         jcb_states.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "CDMX", "Coahuila", "Colima", "Chiapas", "Chihuahua", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "México", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" }));
         add(jcb_states);
@@ -194,7 +218,7 @@ public class ViewNewCustomers extends javax.swing.JPanel {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext (1).png"))); // NOI18N
         add(jLabel15);
-        jLabel15.setBounds(40, 10, 410, 120);
+        jLabel15.setBounds(40, -10, 410, 120);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/explosion-vector-art_00435654.jpg"))); // NOI18N
         add(jLabel14);
@@ -205,6 +229,10 @@ public class ViewNewCustomers extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_nickActionPerformed
 
+    private void jtf_rfcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_rfcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_rfcActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -214,6 +242,8 @@ public class ViewNewCustomers extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -231,6 +261,7 @@ public class ViewNewCustomers extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_name;
     public javax.swing.JTextField jtf_nick;
     public javax.swing.JTextField jtf_no;
+    public javax.swing.JTextField jtf_rfc;
     public javax.swing.JTextField jtf_street;
     public javax.swing.JTextField jtf_suburb;
     public javax.swing.JTextField jtf_tNumber;

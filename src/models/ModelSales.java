@@ -17,6 +17,7 @@ public class ModelSales {
     private double totalN;
     private double price;
     private double totalP;
+    private int number;
 
     /**
      * @return the idCustomer
@@ -114,5 +115,19 @@ public class ModelSales {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the number
+     */
+    public int getNumber() {
+        return number;
+    }
+
+    /**
+     * @param number the number to set
+     */
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

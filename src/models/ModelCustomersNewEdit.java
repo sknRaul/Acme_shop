@@ -20,10 +20,26 @@ public class ModelCustomersNewEdit {
     private String suburb;
     private int no;
     private String nick;
-    private String number;
+    private int number;
     private String email;
     private String data;
+    private String rfc;
     private Object editableValues;
+        private String pass = "prueba";
+
+    /**
+     * @return the pass
+     */
+    public String getPass() {
+        return pass;
+    }
+
+    /**
+     * @param pass the pass to set
+     */
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
     public String getName() {
         return name;
@@ -90,14 +106,6 @@ public class ModelCustomersNewEdit {
         this.nick = nick;
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -148,4 +156,32 @@ public class ModelCustomersNewEdit {
         return editableValues;
     }
 
+    /**
+     * @param number the number to set
+     */
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    /**
+     * @return the number
+     */
+    public int getNumber() {
+        return number;
+    }
+
+    /**
+     * @return the rfc
+     */
+    public String getRfc() {
+        return rfc;
+    }
+
+    /**
+     * @param rfc the rfc to set
+     */
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+    
 }

@@ -41,6 +41,11 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jtf_no = new javax.swing.JTextField();
+        jtf_rfc = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jtf_nick = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jtf_city = new javax.swing.JTextField();
         jtf_suburb = new javax.swing.JTextField();
         jtf_street = new javax.swing.JTextField();
@@ -49,8 +54,6 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jbtn_charge = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jtf_email = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jtf_nick = new javax.swing.JTextField();
         jbtn_accept = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jcb_states = new javax.swing.JComboBox<>();
@@ -120,6 +123,39 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jPanel1.add(jtf_no);
         jtf_no.setBounds(340, 270, 88, 25);
 
+        jtf_rfc.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jtf_rfc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_rfcActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtf_rfc);
+        jtf_rfc.setBounds(300, 200, 130, 25);
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel17.setText("RFC:");
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(260, 200, 30, 20);
+
+        jtf_nick.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jtf_nick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_nickActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtf_nick);
+        jtf_nick.setBounds(140, 200, 100, 25);
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel13.setText("Nombre");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(40, 190, 60, 19);
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel16.setText("de Contacto:");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(40, 210, 89, 19);
+
         jtf_city.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jPanel1.add(jtf_city);
         jtf_city.setBounds(340, 300, 88, 25);
@@ -156,20 +192,6 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         jPanel1.add(jtf_email);
         jtf_email.setBounds(290, 160, 160, 25);
 
-        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel13.setText("Nombre de Contacto:");
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(20, 200, 148, 19);
-
-        jtf_nick.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jtf_nick.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_nickActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jtf_nick);
-        jtf_nick.setBounds(170, 200, 280, 25);
-
         jbtn_accept.setBackground(new java.awt.Color(255, 255, 255));
         jbtn_accept.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jbtn_accept.setText("Aceptar");
@@ -200,6 +222,10 @@ public class ViewEditCustomers extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtf_rfcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_rfcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_rfcActionPerformed
+
     private void jtf_nickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nickActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_nickActionPerformed
@@ -213,6 +239,8 @@ public class ViewEditCustomers extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -231,6 +259,7 @@ public class ViewEditCustomers extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_name;
     public javax.swing.JTextField jtf_nick;
     public javax.swing.JTextField jtf_no;
+    public javax.swing.JTextField jtf_rfc;
     public javax.swing.JTextField jtf_street;
     public javax.swing.JTextField jtf_suburb;
     public javax.swing.JTextField jtf_tNumber;

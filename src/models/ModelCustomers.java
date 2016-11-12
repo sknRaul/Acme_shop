@@ -9,6 +9,6 @@ package models;
  *
  * @author Danni
  */
-public class ModelCustomers {
+public class ModelCustomers { 
     
 }

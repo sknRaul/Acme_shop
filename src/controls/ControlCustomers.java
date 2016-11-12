@@ -62,40 +62,63 @@ public class ControlCustomers implements ActionListener {
     public void inView(){
         this.viewCustomers.setLocationRelativeTo(null);
         this.viewCustomers.setVisible(true);
-        this.viewCustomers.setResizable(true);
         this.viewCustomers.setTitle("Clientes");
-        
         //cargarInterface();
         cargarInterface();
-        cargarTabla();
+        cargarTabla("Select * From clientes");
     }       
     
     public void cargarInterface(){
         String data[][] = {};
-        String col[] = {"No.","Nombre","A. Paterno","A. Materno","Estado","Contacto","Teléfono","E-mail"};
+        String col[] = {"No.","Nombre","A. Paterno","A. Materno","Estado","RFC","Teléfono","E-mail"};
         model = new DefaultTableModel(data, col);
         //con.basicConsult("clientes", "id_cliente", "1");
         //llenarFilas();
         this.viewCustomers.jt_infoCustomer.setModel(model);
     }
     
+    public void validatePasswordAdd(){
+        String pass = JOptionPane.showInputDialog(viewCustomers, "Introduzca la contraseña de usuario");
+        if(pass.equals(this.modelCustomersNewEdit.getPass())){
+            jmiAddActionPerformed();
+        }else{
+            JOptionPane.showMessageDialog(viewCustomers, "Contraseña Incorrecta.\nPor favor intentelo de nuevo. ");
+        }
+    }
+    public void validatePasswordEdit(){
+        String pass = JOptionPane.showInputDialog(viewCustomers, "Introduzca la contraseña de usuario");
+        if(pass.equals(this.modelCustomersNewEdit.getPass())){
+            jbtnEditActionPerformed();
+        }else{
+            JOptionPane.showMessageDialog(viewCustomers, "Contraseña Incorrecta.\nPor favor intentelo de nuevo. ");
+        }
+    }
+       public void validatePasswordDelete(){
+        String pass = JOptionPane.showInputDialog(viewCustomers, "Introduzca la contraseña de usuario");
+        if(pass.equals(this.modelCustomersNewEdit.getPass())){
+            jbtnDeleteActionPerformed();
+        }else{
+            JOptionPane.showMessageDialog(viewCustomers, "Contraseña Incorrecta.\nPor favor intentelo de nuevo. ");
+        }
+    }
+    
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource().equals(this.viewCustomers.jmi_newCustomer)){
-            jmiAddActionPerformed();
+            validatePasswordAdd();
         }else if(ae.getSource().equals(this.viewCustomers.jbtn_edit)){
-            jbtnEditActionPerformed();
+            validatePasswordEdit();
         }else if(ae.getSource().equals(this.viewCustomers.jmi_byName)){
             jmiByName();
         }else if(ae.getSource().equals(this.viewCustomers.jmi_byNick)){
-            jmiByNick();
+            jmiByRfc();
         }else if(ae.getSource().equals(this.viewCustomers.jmi_byState)){
             jmiByState();
         }else if(ae.getSource().equals(this.viewCustomers.jmi_byID)){
             jmiByID();
         }else if(ae.getSource().equals(this.viewCustomers.jbtn_delete)){
-            jbtnDeleteActionPerformed();
+            validatePasswordDelete();
         }else if(ae.getSource().equals(this.viewCustomers.jmi_comeBack)){
             back();
         }
@@ -115,19 +138,18 @@ public class ControlCustomers implements ActionListener {
         fila[2] = con.getColumn()[2];
         fila[3] = con.getColumn()[3];
         fila[4] = con.getColumn()[8];
-        fila[5] = con.getColumn()[9];
+        fila[5] = con.getColumn()[12];
         fila[6] = con.getColumn()[10];
         fila[7] = con.getColumn()[11];
         model.addRow(fila);
     }
     
-    public void cargarTabla(){
-        
+    public void cargarTabla(String sql){
         try{
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT * FROM clientes");
+            rs = st.executeQuery(sql);
             
-            String prueba[] = new String[12];
+            String prueba[] = new String[13];
             
         while(rs.next()){
             prueba[0] = rs.getString(1);
@@ -142,12 +164,14 @@ public class ControlCustomers implements ActionListener {
             prueba[9] = rs.getString(10);
             prueba[10] = rs.getString(11);
             prueba[11] = rs.getString(12);
+            prueba[12] = rs.getString(13);
+            
             fila[0] = prueba[0];
             fila[1] = prueba[1];
             fila[2] = prueba[2];
             fila[3] = prueba[3];
             fila[4] = prueba[8];
-            fila[5] = prueba[9];
+            fila[5] = prueba[12];
             fila[6] = prueba[10];
             fila[7] = prueba[11];
             model.addRow(fila);
@@ -174,43 +198,57 @@ public class ControlCustomers implements ActionListener {
         try{
             this.modelCustomersNewEdit.setEditableValues(this.viewCustomers.jt_infoCustomer.getValueAt(row, 0));            
         }catch(Exception e){
-            System.out.println("NO se que pasa: "+ e.getMessage());
+            JOptionPane.showMessageDialog(viewCustomers, "No seleccionaste ningun registro de la tabla.");
         }
+    }
+    
+    public void clean(){
+        DefaultTableModel tblSuppliers = (DefaultTableModel) this.viewCustomers.jt_infoCustomer.getModel();
+        while(tblSuppliers.getRowCount()>0)
+            tblSuppliers.removeRow(0);
+        this.viewCustomers.jt_infoCustomer.setModel(tblSuppliers);
     }
     
     public void jmiByName(){
         this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el nombre del cliente."));
-        con.basicConsult("clientes", "nombre",this.modelCustomersNewEdit.getData());
-        llenarFilas();        
+        clean();     
+        cargarTabla("SELECT * FROM clientes WHERE nombre = '"+ this.modelCustomersNewEdit.getData() +"'");
     }
     
     public void jmiByID(){
         this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el ID del cliente."));
-        con.basicConsult("clientes", "id_cliente", this.modelCustomersNewEdit.getData());
-        llenarFilas();
+        clean();
+        cargarTabla("SELECT * FROM clientes WHERE id_cliente = '"+ this.modelCustomersNewEdit.getData() +"'");
+        
     }
     
     public void jmiByState(){
         this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el Estado del cliente."));
-        con.basicConsult("clientes", "estado", this.modelCustomersNewEdit.getData());
-        llenarFilas();
+        clean();
+        cargarTabla("SELECT * FROM clientes WHERE estado = '"+ this.modelCustomersNewEdit.getData() +"'");
     }
     
-    public void jmiByNick(){
+    public void jmiByRfc(){
         this.modelCustomersNewEdit.setData(JOptionPane.showInputDialog(viewCustomers, "Introduzca el Contacto del cliente."));
-        con.basicConsult("clientes", "nombre_contacto", this.modelCustomersNewEdit.getData());
-        llenarFilas();
+        clean();
+        cargarTabla("SELECT * FROM clientes WHERE id_cliente = '"+ this.modelCustomersNewEdit.getData() +"'");
     }
     
     public void jbtnDeleteActionPerformed(){
         int row = this.viewCustomers.jt_infoCustomer.getSelectedRow();
-        try{
-            this.modelCustomersNewEdit.setEditableValues(this.viewCustomers.jt_infoCustomer.getValueAt(row, 0));            
-            st.executeUpdate("DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = "+this.modelCustomersNewEdit.getEditableValues()+"");
-            System.out.println("Listo");
-        }catch(SQLException e){
-            System.out.println("NOOOO"+ e.getMessage());
+        int resp = JOptionPane.showConfirmDialog(viewCustomers, "¿Esta seguro de querer eliminar al cliente de los registros?", "Eliminar", JOptionPane.YES_NO_OPTION);        
+        if(resp == 0){
+            try{
+                this.modelCustomersNewEdit.setEditableValues(this.viewCustomers.jt_infoCustomer.getValueAt(row, 0));            
+                st.executeUpdate("DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = "+this.modelCustomersNewEdit.getEditableValues()+"");
+                clean();
+                cargarTabla("Select * From clientes");
+            }catch(SQLException e){
+                System.out.println("NOOOO"+ e.getMessage());
+            }
+        }else{
+            JOptionPane.showMessageDialog(viewCustomers, "Ningun cliente ha sido eliminado.");
         }
     }
-    
+        
 }
