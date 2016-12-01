@@ -85,6 +85,9 @@ public class Main {
         viewCustomers = new ViewCustomers();
         modelCustomers = new ModelCustomers();
         
+        ViewShopping viewShopping = new ViewShopping();
+        ModelShopping modelShopping = new ModelShopping();
+        ControlShopping controlShopping = new ControlShopping(modelShopping, viewShopping);
         
         JPanel views[] = new JPanel[3];
         views[0] = viewNewCustomer;
@@ -96,12 +99,13 @@ public class Main {
         ViewMain vm = new ViewMain();
         ModelMain mm = new ModelMain();
         
-        Object controlsMain[] = new Object[4];
+        Object controlsMain[] = new Object[5];
         controlsMain[0] = cs;
         controlsMain[1] = controlCustomers;
         controlsMain[2] = controlSales;
         controlsMain[3] = controllerProducts;
-                
+        controlsMain[4] = controlShopping;
+        
         ControlMain cm = new ControlMain(mm, vm, controlsMain);
     }
 }

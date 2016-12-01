@@ -19,7 +19,6 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import jdda.*;
-import sun.security.rsa.RSACore;
 /**
  *
  * @author Danni

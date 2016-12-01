@@ -35,6 +35,7 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_Customers = new javax.swing.JMenuItem();
         jm_sales = new javax.swing.JMenu();
         jmi_sales = new javax.swing.JMenuItem();
+        jmi_shopping = new javax.swing.JMenuItem();
         jm_products = new javax.swing.JMenu();
         jmi_products = new javax.swing.JMenuItem();
         jm_reports = new javax.swing.JMenu();
@@ -61,10 +62,18 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jm_sales.setText("Ventas");
+        jm_sales.setText("Transacciones");
 
         jmi_sales.setText("Modulo Ventas");
         jm_sales.add(jmi_sales);
+
+        jmi_shopping.setText("Compras");
+        jmi_shopping.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_shoppingActionPerformed(evt);
+            }
+        });
+        jm_sales.add(jmi_shopping);
 
         jMenuBar1.add(jm_sales);
 
@@ -121,6 +130,10 @@ public class ViewMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_suppliersReportActionPerformed
 
+    private void jmi_shoppingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_shoppingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_shoppingActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,6 +183,7 @@ public class ViewMain extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_productsReport;
     public javax.swing.JMenuItem jmi_sales;
     public javax.swing.JMenuItem jmi_salesReport;
+    public javax.swing.JMenuItem jmi_shopping;
     public javax.swing.JMenuItem jmi_suppliers;
     public javax.swing.JMenuItem jmi_suppliersReport;
     // End of variables declaration//GEN-END:variables

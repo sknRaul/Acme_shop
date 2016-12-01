@@ -24,6 +24,7 @@ public class ControlMain implements ActionListener {
     ControlCustomers cc;
     ControllerProductos cProducts;
     ControlSales cSales;
+    ControlShopping cShopping;
 
     public ControlMain(ModelMain modelMain, ViewMain viewMain, Object controls[]) {
         this.viewMain = viewMain;
@@ -36,6 +37,7 @@ public class ControlMain implements ActionListener {
         cc = (ControlCustomers) controls[1];
         cSales = (ControlSales) controls[2];
         cProducts = (ControllerProductos) controls[3];
+        cShopping = (ControlShopping) controls[4];
 
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
@@ -51,6 +53,11 @@ public class ControlMain implements ActionListener {
         this.viewMain.jmi_productsReport.addActionListener(this);
         this.viewMain.jmi_salesReport.addActionListener(this);
         this.viewMain.jmi_suppliersReport.addActionListener(this);
+        this.viewMain.jmi_shopping.addActionListener(this);
+        this.cShopping.vs.jbtn_addSupplier.addActionListener(this);
+        this.cs.cas.vas.jbtn_back.addActionListener(this);
+        this.cShopping.vs.jbtn_addProduct.addActionListener(this);
+        this.cProducts.cnp.vnp.jbtn_back.addActionListener(this);
     }
 
     public void inView() {
@@ -86,6 +93,31 @@ public class ControlMain implements ActionListener {
         this.viewMain.revalidate();
         this.viewMain.repaint();
         this.viewMain.setSize(cSales.viewSales.jp_size.getSize());
+        this.viewMain.setLocationRelativeTo(null);
+    }
+    
+    public void shopping(){
+        this.viewMain.setContentPane(cShopping.vs);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+        this.viewMain.setSize(847, 527);
+        this.viewMain.setLocationRelativeTo(null);
+    }
+    
+    public void addSupplierShop(){
+        this.viewMain.setContentPane(cs.cas.vas);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+        this.viewMain.pack();
+        this.viewMain.setLocationRelativeTo(null);
+    }
+    
+    public void addProductsShop(){
+        this.viewMain.setContentPane(cProducts.cnp.vnp);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+        this.viewMain.setSize(788, 500);
+        this.viewMain.setLocationRelativeTo(null);
     }
 
     @Override
@@ -110,14 +142,19 @@ public class ControlMain implements ActionListener {
             this.cProducts.viewProducts.setVisible(false);
             inView();
         }
-            
-            else if(e.getSource() == this.viewMain.jmi_suppliersReport)
-                this.modelMain.generate("src\\reports\\SuppliersReport.jrxml",this.viewMain);
-            else if (e.getSource() == this.viewMain.jmi_customersReport)
-                this.modelMain.generate("src\\reports\\CustomersReport.jrxml",this.viewMain);
-             else if (e.getSource() == this.viewMain.jmi_productsReport)
-                this.modelMain.generate("src\\reports\\ProductsReport.jrxml",this.viewMain);
-             else if (e.getSource() == this.viewMain.jmi_salesReport)
-               this.modelMain.generate("src\\reports\\SalesReport.jrxml",this.viewMain);
+        else if(e.getSource() == this.viewMain.jmi_suppliersReport)
+            this.modelMain.generate("src\\reports\\SuppliersReport.jrxml",this.viewMain);
+        else if (e.getSource() == this.viewMain.jmi_customersReport)
+            this.modelMain.generate("src\\reports\\CustomersReport.jrxml",this.viewMain);
+        else if (e.getSource() == this.viewMain.jmi_productsReport)
+            this.modelMain.generate("src\\reports\\ProductsReport.jrxml",this.viewMain);
+        else if (e.getSource() == this.viewMain.jmi_salesReport)
+           this.modelMain.generate("src\\reports\\SalesReport.jrxml",this.viewMain);
+        else if(e.getSource()== this.viewMain.jmi_shopping || e.getSource()== this.cs.cas.vas.jbtn_back || e.getSource() == this.cProducts.cnp.vnp.jbtn_back)
+            shopping();
+        else if(e.getSource() == this.cShopping.vs.jbtn_addSupplier)
+            addSupplierShop();
+        else if(e.getSource() == this.cShopping.vs.jbtn_addProduct)
+            addProductsShop();
     }
 }
