@@ -27,7 +27,14 @@ public class ModelShopping {
     private double subtotal = 0;
     private double total;
     private double totalProduct = 0;
-        
+    private int id_shop;
+    
+    public void clean(){
+        subtotal = 0;
+        total = 0;
+        this.id_shop = 0;
+    }
+    
     public void supplier(){
         try {
             cb.Connection("acme_shop", "root", "1234");
@@ -211,6 +218,20 @@ public class ModelShopping {
      */
     public void setTotalProduct(double totalProduct) {
         this.totalProduct = totalProduct;
+    }
+
+    /**
+     * @return the id_shop
+     */
+    public int getId_shop() {
+        return id_shop;
+    }
+
+    /**
+     * @param id_shop the id_shop to set
+     */
+    public void setId_shop(int id_shop) {
+        this.id_shop = id_shop;
     }
     
 }

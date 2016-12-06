@@ -73,19 +73,19 @@ public class ViewShopping extends javax.swing.JPanel {
         jl_date.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_date.setText("Fecha");
         add(jl_date);
-        jl_date.setBounds(30, 60, 70, 21);
+        jl_date.setBounds(30, 60, 70, 19);
 
         jbtn_addSupplier.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_addSupplier.setText("+");
         jbtn_addSupplier.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_addSupplier.setContentAreaFilled(false);
         add(jbtn_addSupplier);
-        jbtn_addSupplier.setBounds(260, 120, 73, 27);
+        jbtn_addSupplier.setBounds(260, 120, 73, 25);
 
         jtf_date.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_date.setEnabled(false);
         add(jtf_date);
-        jtf_date.setBounds(110, 60, 110, 27);
+        jtf_date.setBounds(110, 60, 110, 31);
 
         jbtn_shop.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_shop.setForeground(new java.awt.Color(0, 153, 0));
@@ -107,7 +107,7 @@ public class ViewShopping extends javax.swing.JPanel {
 
         jtf_idSupplier.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         add(jtf_idSupplier);
-        jtf_idSupplier.setBounds(120, 120, 60, 27);
+        jtf_idSupplier.setBounds(120, 120, 60, 31);
 
         jbtn_suppliersSearch.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_suppliersSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busqueda.png"))); // NOI18N
@@ -137,22 +137,22 @@ public class ViewShopping extends javax.swing.JPanel {
             }
         });
         add(jtf_quantity);
-        jtf_quantity.setBounds(460, 230, 60, 27);
+        jtf_quantity.setBounds(460, 230, 60, 31);
 
         jl_product.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_product.setText("Producto");
         add(jl_product);
-        jl_product.setBounds(30, 180, 90, 21);
+        jl_product.setBounds(30, 180, 90, 19);
 
         jtf_total.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_total.setEnabled(false);
         add(jtf_total);
-        jtf_total.setBounds(410, 430, 60, 27);
+        jtf_total.setBounds(410, 430, 60, 31);
 
         jl_price.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_price.setText("Precio $");
         add(jl_price);
-        jl_price.setBounds(218, 232, 90, 21);
+        jl_price.setBounds(218, 232, 90, 19);
 
         jbtn_cancel.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_cancel.setForeground(new java.awt.Color(204, 0, 0));
@@ -160,12 +160,12 @@ public class ViewShopping extends javax.swing.JPanel {
         jbtn_cancel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_cancel.setContentAreaFilled(false);
         add(jbtn_cancel);
-        jbtn_cancel.setBounds(430, 180, 170, 27);
+        jbtn_cancel.setBounds(430, 180, 170, 25);
 
         jl_quantity.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_quantity.setText("Cantidad");
         add(jl_quantity);
-        jl_quantity.setBounds(370, 230, 90, 21);
+        jl_quantity.setBounds(370, 230, 90, 19);
 
         jtf_nameProduct.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_nameProduct.setEnabled(false);
@@ -175,19 +175,19 @@ public class ViewShopping extends javax.swing.JPanel {
             }
         });
         add(jtf_nameProduct);
-        jtf_nameProduct.setBounds(20, 230, 180, 27);
+        jtf_nameProduct.setBounds(20, 230, 180, 31);
 
         jtf_subtotal.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_subtotal.setEnabled(false);
         add(jtf_subtotal);
-        jtf_subtotal.setBounds(110, 430, 60, 27);
+        jtf_subtotal.setBounds(110, 430, 60, 31);
 
         jbtn_addQuantity.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_addQuantity.setText("+");
         jbtn_addQuantity.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_addQuantity.setContentAreaFilled(false);
         add(jbtn_addQuantity);
-        jbtn_addQuantity.setBounds(530, 230, 60, 27);
+        jbtn_addQuantity.setBounds(530, 230, 60, 25);
 
         jbtn_productSearch.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_productSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busqueda.png"))); // NOI18N
@@ -205,28 +205,28 @@ public class ViewShopping extends javax.swing.JPanel {
         jtf_iva.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_iva.setEnabled(false);
         add(jtf_iva);
-        jtf_iva.setBounds(250, 430, 60, 27);
+        jtf_iva.setBounds(250, 430, 60, 31);
 
         jbtn_addProduct.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jbtn_addProduct.setText("+");
         jbtn_addProduct.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_addProduct.setContentAreaFilled(false);
         add(jbtn_addProduct);
-        jbtn_addProduct.setBounds(250, 180, 73, 27);
+        jbtn_addProduct.setBounds(250, 180, 73, 25);
 
         jl_total.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_total.setText("Total");
         add(jl_total);
-        jl_total.setBounds(350, 430, 60, 21);
+        jl_total.setBounds(350, 430, 60, 19);
 
         jtf_idProduct.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         add(jtf_idProduct);
-        jtf_idProduct.setBounds(120, 180, 50, 27);
+        jtf_idProduct.setBounds(120, 180, 50, 31);
 
         jl_iva.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_iva.setText("IVA");
         add(jl_iva);
-        jl_iva.setBounds(210, 430, 30, 21);
+        jl_iva.setBounds(210, 430, 30, 19);
 
         jt_shopping.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -244,7 +244,7 @@ public class ViewShopping extends javax.swing.JPanel {
         jl_subtotal.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jl_subtotal.setText("Subtotal");
         add(jl_subtotal);
-        jl_subtotal.setBounds(30, 430, 100, 21);
+        jl_subtotal.setBounds(30, 430, 100, 19);
 
         jtf_priceProduct.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jtf_priceProduct.setEnabled(false);
@@ -254,7 +254,7 @@ public class ViewShopping extends javax.swing.JPanel {
             }
         });
         add(jtf_priceProduct);
-        jtf_priceProduct.setBounds(280, 230, 80, 27);
+        jtf_priceProduct.setBounds(280, 230, 80, 31);
 
         jl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flash.jpg"))); // NOI18N
         add(jl_background);

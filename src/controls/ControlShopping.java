@@ -12,6 +12,7 @@ import views.ViewShopping;
 import stringTo.StringTo;
 import jdda.ConnectionDB;
 import java.sql.ResultSet;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 /**
  *
@@ -79,18 +80,25 @@ public class ControlShopping implements ActionListener {
         this.ms.setPrice_product(st.stringToDouble(this.vs.jtf_priceProduct.getText()));
         this.ms.setQuantity(st.stringToInt(this.vs.jtf_quantity.getText()));
         ms.showSubTotal();
+        DecimalFormat no = new DecimalFormat("0.00");
         this.vs.jtf_subtotal.setText(""+this.ms.getSubtotal());
         showData();
         this.vs.jtf_iva.setText(""+this.ms.getIva());
-        this.vs.jtf_total.setText(""+this.ms.getTotal());
+        this.vs.jtf_total.setText(""+no.format(this.ms.getTotal()));
         fillDetail();
     }
+    
     public void fillDetail(){
         try {
             rs = cb.query("Select max(id_compra) from compras");
             rs.next();
-            int id_compra = rs.getInt("max(id_compra)");
-            cb.add("insert into detalle_compras(id_compra, id_producto, cantidad, total_producto, precio) values ('"+id_compra+"','"+ms.getId_product()+"','"+ms.getQuantity()+"','"+ms.getTotalProduct()+"','"+ms.getPrice_product()+"')");
+            this.ms.setId_shop(rs.getInt("max(id_compra)"));
+            cb.add("insert into detalle_compras(id_compra, id_producto, cantidad, total_producto, precio) values ('"+this.ms.getId_shop()+"','"+ms.getId_product()+"','"+ms.getQuantity()+"','"+ms.getTotalProduct()+"','"+ms.getPrice_product()+"')");
+            rs.close();
+            rs = cb.query("Select existencias from productos where id_producto="+ms.getId_product());
+            rs.next();
+            int quantity = this.ms.getQuantity()+rs.getInt("existencias");
+            cb.upDate("update productos set existencias = "+quantity+" where id_producto = "+this.ms.getId_product());
         } catch (Exception e) {
             System.err.println(e.getMessage()+"\nControlShopping.fillDetail");
         }
@@ -132,7 +140,10 @@ public class ControlShopping implements ActionListener {
         if(this.vs.jbtn_shop.getText().equals("Comprar")){
             this.vs.jbtn_shop.setText("Iniciar Compra");
             enableShop(false);
+            this.cb.add("update compras set subtotal ="+this.ms.getSubtotal()+", total = "+this.ms.getTotal()+"where id_compra = "+this.ms.getId_shop());
             this.cb.query("Commit");
+            clean();
+            this.ms.clean();
         }else if(this.vs.jbtn_shop.getText().equals("Iniciar Compra") && !this.vs.jtf_nameSupplier.getText().equals("")){
             this.vs.jbtn_shop.setText("Comprar");
             enableShop(true);
@@ -156,10 +167,22 @@ public class ControlShopping implements ActionListener {
         this.ms.setSubtotal(0);
         this.ms.setId_supplier(null);
         this.vs.jtf_nameSupplier.setText("");
+        this.vs.jtf_idProduct.setText("");
+        this.vs.jtf_idProduct.setText("");
+        this.vs.jtf_nameProduct.setText("");
+        this.vs.jtf_priceProduct.setText("");
+        this.vs.jtf_quantity.setText("");
+        this.vs.jtf_subtotal.setText("");
+        this.vs.jtf_idSupplier.setText("");
+        this.vs.jtf_total.setText("");
     }
 
     public void cancelShop(){
         cb.query("rollback");
+        clean();
+        this.ms.clean();
+        enableShop(false);
+        this.vs.jbtn_shop.setText("Iniciar Compra");
     }
     
     @Override
