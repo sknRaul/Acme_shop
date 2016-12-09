@@ -8,6 +8,7 @@ package controls;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import views.ViewMain;
 import models.ModelMain;
 
@@ -20,6 +21,7 @@ public class ControlMain implements ActionListener {
     private ModelMain modelMain;
     private ViewMain viewMain;
     private Object controls[];
+    
     ControlSuppliers cs;
     ControlCustomers cc;
     ControllerProductos cProducts;
@@ -94,6 +96,7 @@ public class ControlMain implements ActionListener {
         this.viewMain.repaint();
         this.viewMain.setSize(cSales.viewSales.jp_size.getSize());
         this.viewMain.setLocationRelativeTo(null);
+        cSales.chooseASeller(JOptionPane.showInputDialog(viewMain, "¡ BIENVENIDO !\n Introduzca Clave Vendedor"));
     }
     
     public void shopping(){

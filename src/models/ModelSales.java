@@ -12,12 +12,14 @@ package models;
 public class ModelSales {
     private String idCustomer;
     private String idProduct;
+    private String idSold;
     private String name;
-    private double total;
+    private float total;
     private double totalN;
     private double price;
     private double totalP;
     private int number;
+    private float iva = (float) 0.16;
 
     /**
      * @return the idCustomer
@@ -45,20 +47,6 @@ public class ModelSales {
      */
     public void setIdProduct(String idProduct) {
         this.idProduct = idProduct;
-    }
-
-    /**
-     * @return the total
-     */
-    public double getTotal() {
-        return total;
-    }
-
-    /**
-     * @param total the total to set
-     */
-    public void setTotal(double total) {
-        this.total = total;
     }
 
     /**
@@ -130,4 +118,40 @@ public class ModelSales {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    /**
+     * @return the total
+     */
+    public float getTotal() {
+        return total;
+    }
+
+    /**
+     * @param total the total to set
+     */
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
+    /**
+     * @return the iva
+     */
+    public float getIva() {
+        return iva;
+    }
+
+    /**
+     * @return the idSold
+     */
+    public String getIdSold() {
+        return idSold;
+    }
+
+    /**
+     * @param idSold the idSold to set
+     */
+    public void setIdSold(String idSold) {
+        this.idSold = idSold;
+    }
+
 }

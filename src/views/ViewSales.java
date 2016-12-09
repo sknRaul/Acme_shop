@@ -29,25 +29,23 @@ public class ViewSales extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jl_seller = new javax.swing.JLabel();
-        jtf_customer = new javax.swing.JTextField();
         jl_date = new javax.swing.JLabel();
         jl_dateFormat = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jl_customer = new javax.swing.JLabel();
-        jtf_seller = new javax.swing.JTextField();
         jl_rfc = new javax.swing.JLabel();
-        jtf_rfc = new javax.swing.JTextField();
-        jtf_idCustomer = new javax.swing.JTextField();
         jl_idCustomer = new javax.swing.JLabel();
-        jbtn_searchCustomer = new javax.swing.JButton();
         jl_idProduct = new javax.swing.JLabel();
         jtf_idProduct = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jbtn_searchProduct = new javax.swing.JButton();
-        jtf_idSeller = new javax.swing.JTextField();
         jl_idSeller = new javax.swing.JLabel();
         jbtn_searchByName = new javax.swing.JButton();
-        jbtn_closeSale = new javax.swing.JButton();
+        jl_sellerName = new javax.swing.JLabel();
+        jl_idSeller1 = new javax.swing.JLabel();
+        jl_idCustomer1 = new javax.swing.JLabel();
+        jl_customer1 = new javax.swing.JLabel();
+        jl_rfc1 = new javax.swing.JLabel();
         jbtn_back = new javax.swing.JButton();
         jbtn_cancelSale = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -70,35 +68,15 @@ public class ViewSales extends javax.swing.JPanel {
 
         jl_seller.setText("Vendedor:");
 
-        jtf_customer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_customerActionPerformed(evt);
-            }
-        });
-
         jl_date.setText("Fecha:");
 
         jl_dateFormat.setText("DD/MM/AAAA");
 
         jl_customer.setText("Cliente:");
 
-        jtf_seller.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_sellerActionPerformed(evt);
-            }
-        });
-
         jl_rfc.setText("RFC:");
 
-        jtf_rfc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_rfcActionPerformed(evt);
-            }
-        });
-
-        jl_idCustomer.setText("ID:");
-
-        jbtn_searchCustomer.setText("Buscar");
+        jl_idCustomer.setText("Clave Cliente:");
 
         jl_idProduct.setText("ID:");
 
@@ -107,6 +85,16 @@ public class ViewSales extends javax.swing.JPanel {
         jl_idSeller.setText("ID:");
 
         jbtn_searchByName.setText("Nombre");
+
+        jl_sellerName.setText("Vendedor");
+
+        jl_idSeller1.setText("ID:");
+
+        jl_idCustomer1.setText("ID:");
+
+        jl_customer1.setText("Cliente:");
+
+        jl_rfc1.setText("RFC:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -125,92 +113,80 @@ public class ViewSales extends javax.swing.JPanel {
                                 .addComponent(jl_dateFormat))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jl_seller)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_seller, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jl_sellerName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jl_idSeller)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_idSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jl_idSeller1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jl_idCustomer)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtf_idCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbtn_searchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jl_idProduct)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtf_idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbtn_searchProduct)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbtn_searchByName))))
+                                .addGap(8, 8, 8)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jl_idProduct)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jtf_idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jbtn_searchProduct)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jbtn_searchByName))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jl_customer)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jl_customer1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jl_idCustomer)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jl_idCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(30, 30, 30)
                         .addComponent(jl_rfc)
                         .addGap(18, 18, 18)
-                        .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jl_customer)
-                        .addGap(18, 18, 18)
-                        .addComponent(jtf_customer, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addComponent(jl_rfc1)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtf_idSeller, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_idSeller)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jl_idSeller)
+                        .addComponent(jl_idSeller1))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jl_seller)
-                        .addComponent(jtf_seller, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_sellerName)))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_date)
                     .addComponent(jl_dateFormat))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtf_idCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbtn_searchCustomer)
-                        .addComponent(jl_idCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_idCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jl_idCustomer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_customer)
-                    .addComponent(jtf_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jl_customer1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_rfc)
-                    .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jl_rfc1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtf_idProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_idProduct)
                     .addComponent(jbtn_searchByName)
                     .addComponent(jbtn_searchProduct))
-                .addGap(21, 21, 21))
+                .addGap(39, 39, 39))
         );
 
         add(jPanel1);
-        jPanel1.setBounds(50, 110, 300, 240);
-
-        jbtn_closeSale.setText("Cerrar Venta");
-        jbtn_closeSale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_closeSaleActionPerformed(evt);
-            }
-        });
-        add(jbtn_closeSale);
-        jbtn_closeSale.setBounds(420, 160, 130, 30);
+        jPanel1.setBounds(50, 110, 300, 200);
 
         jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
         jbtn_back.setBorder(null);
@@ -223,8 +199,9 @@ public class ViewSales extends javax.swing.JPanel {
 
         jbtn_cancelSale.setText("Cancelar Venta");
         add(jbtn_cancelSale);
-        jbtn_cancelSale.setBounds(420, 200, 130, 30);
+        jbtn_cancelSale.setBounds(420, 160, 130, 30);
 
+        jt_sale.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         jt_sale.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -247,25 +224,25 @@ public class ViewSales extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jt_sale);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(40, 420, 530, 110);
+        jScrollPane1.setBounds(40, 370, 530, 110);
 
         jbtn_newSale.setText("Nueva Venta");
         add(jbtn_newSale);
         jbtn_newSale.setBounds(420, 120, 130, 30);
         add(jtf_total);
-        jtf_total.setBounds(80, 380, 60, 20);
+        jtf_total.setBounds(80, 330, 60, 20);
         add(jtf_totalN);
-        jtf_totalN.setBounds(330, 380, 70, 20);
+        jtf_totalN.setBounds(330, 330, 70, 20);
         add(jtf_taxes);
-        jtf_taxes.setBounds(180, 380, 70, 20);
+        jtf_taxes.setBounds(180, 330, 70, 20);
 
         jLabel13.setText("TOTAL NETO:");
         add(jLabel13);
-        jLabel13.setBounds(260, 380, 70, 20);
+        jLabel13.setBounds(260, 330, 70, 20);
 
         jLabel4.setText("IVA:");
         add(jLabel4);
-        jLabel4.setBounds(150, 380, 30, 20);
+        jLabel4.setBounds(150, 330, 30, 20);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generatedtext (4).png"))); // NOI18N
@@ -278,7 +255,7 @@ public class ViewSales extends javax.swing.JPanel {
 
         jLabel12.setText("TOTAL:");
         add(jLabel12);
-        jLabel12.setBounds(40, 380, 50, 20);
+        jLabel12.setBounds(40, 330, 50, 20);
 
         jp_size.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -297,22 +274,6 @@ public class ViewSales extends javax.swing.JPanel {
         jp_size.setBounds(0, 0, 690, 580);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtf_customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_customerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_customerActionPerformed
-
-    private void jtf_sellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_sellerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_sellerActionPerformed
-
-    private void jtf_rfcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_rfcActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_rfcActionPerformed
-
-    private void jbtn_closeSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_closeSaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_closeSaleActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
@@ -326,27 +287,25 @@ public class ViewSales extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_cancelSale;
-    public javax.swing.JButton jbtn_closeSale;
     public javax.swing.JButton jbtn_newSale;
     public javax.swing.JButton jbtn_searchByName;
-    public javax.swing.JButton jbtn_searchCustomer;
     public javax.swing.JButton jbtn_searchProduct;
     public javax.swing.JLabel jl_customer;
+    public javax.swing.JLabel jl_customer1;
     public javax.swing.JLabel jl_date;
     public javax.swing.JLabel jl_dateFormat;
     private javax.swing.JLabel jl_idCustomer;
+    public javax.swing.JLabel jl_idCustomer1;
     private javax.swing.JLabel jl_idProduct;
     private javax.swing.JLabel jl_idSeller;
+    public javax.swing.JLabel jl_idSeller1;
     public javax.swing.JLabel jl_rfc;
+    public javax.swing.JLabel jl_rfc1;
     public javax.swing.JLabel jl_seller;
+    public javax.swing.JLabel jl_sellerName;
     public javax.swing.JPanel jp_size;
     public javax.swing.JTable jt_sale;
-    public javax.swing.JTextField jtf_customer;
-    public javax.swing.JTextField jtf_idCustomer;
     public javax.swing.JTextField jtf_idProduct;
-    public javax.swing.JTextField jtf_idSeller;
-    public javax.swing.JTextField jtf_rfc;
-    public javax.swing.JTextField jtf_seller;
     public javax.swing.JTextField jtf_taxes;
     public javax.swing.JTextField jtf_total;
     public javax.swing.JTextField jtf_totalN;

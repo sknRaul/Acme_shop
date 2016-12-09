@@ -47,6 +47,7 @@ public class ControlCustomersNew implements ActionListener{
             rs = st.executeQuery("Select id_cliente from clientes");
             while(rs.next()){
                 counter = Integer.parseInt(rs.getString(1));
+                System.out.println(counter);
         }
 
         }catch(SQLException esql){
@@ -112,8 +113,8 @@ public class ControlCustomersNew implements ActionListener{
             }catch(Exception e){
                 JOptionPane.showMessageDialog(viewNewCustomers, "Asegurate de haber llenado los campos.");
             }
-            st.executeUpdate("INSERT INTO clientes (id_cliente,nombre,ap_paterno,ap_materno,no,calle,colonia,ciudad,estado,nombre_contacto,telefono,email,rfc)"
-                    +" VALUES ('"+ (counter+1) +"','"
+            st.executeUpdate("INSERT INTO clientes (nombre,ap_paterno,ap_materno,no,calle,colonia,ciudad,estado,nombre_contacto,telefono,email,rfc)"
+                    +" VALUES ('"
                     + this.modelCustomersNewEdit.getName() +"','"
                     + this.modelCustomersNewEdit.getAp_pat() +"','"
                     + this.modelCustomersNewEdit.getAp_ma()+"','"
