@@ -75,17 +75,37 @@ public class ControlShopping implements ActionListener {
         this.vs.jtf_priceProduct.setText(""+this.ms.getPrice_product());
     }
     
+    public boolean addShop(){
+        boolean left = true;
+        tbl = (DefaultTableModel) this.vs.jt_shopping.getModel();
+        for(int i = 0; tbl.getRowCount()>i; i++){
+            int id_product = st.stringToInt( (String) tbl.getValueAt(i, 0));
+            if(id_product == st.stringToInt(this.vs.jtf_idProduct.getText()))
+                left = false;
+            else
+                left = true;
+        }
+        return left;
+    }
+    
     public void insertTable(){
-        this.ms.setId_product(""+st.stringToInt(this.vs.jtf_idProduct.getText()));
-        this.ms.setPrice_product(st.stringToDouble(this.vs.jtf_priceProduct.getText()));
-        this.ms.setQuantity(st.stringToInt(this.vs.jtf_quantity.getText()));
-        ms.showSubTotal();
-        DecimalFormat no = new DecimalFormat("0.00");
-        this.vs.jtf_subtotal.setText(""+this.ms.getSubtotal());
-        showData();
-        this.vs.jtf_iva.setText(""+this.ms.getIva());
-        this.vs.jtf_total.setText(""+no.format(this.ms.getTotal()));
-        fillDetail();
+        if(addShop() && !this.vs.jtf_quantity.getText().equals("")){
+            this.ms.setId_product(""+st.stringToInt(this.vs.jtf_idProduct.getText()));
+            this.ms.setPrice_product(st.stringToDouble(this.vs.jtf_priceProduct.getText()));
+            this.ms.setQuantity(st.stringToInt(this.vs.jtf_quantity.getText()));
+            ms.showSubTotal();
+            DecimalFormat no = new DecimalFormat("0.00");
+            this.vs.jtf_subtotal.setText(""+this.ms.getSubtotal());
+            showData();
+            this.vs.jtf_iva.setText(""+this.ms.getIva());
+            this.vs.jtf_total.setText(""+no.format(this.ms.getTotal()));
+            fillDetail();
+        }else if(this.vs.jtf_quantity.getText().equals("")){
+            JOptionPane.showMessageDialog(this.vs, "Inserta una cantidad por favor");
+        }else{
+            JOptionPane.showMessageDialog(this.vs, "El producto ya fue agregado a esta compra");
+        }
+        
     }
     
     public void fillDetail(){
@@ -137,7 +157,7 @@ public class ControlShopping implements ActionListener {
     }
     
     public void shop(){   
-        if(this.vs.jbtn_shop.getText().equals("Comprar")){
+        if(this.vs.jbtn_shop.getText().equals("Comprar") && JOptionPane.showConfirmDialog(this.vs, "Desea terminar la operación") == 0){
             this.vs.jbtn_shop.setText("Iniciar Compra");
             enableShop(false);
             this.cb.add("update compras set subtotal ="+this.ms.getSubtotal()+", total = "+this.ms.getTotal()+"where id_compra = "+this.ms.getId_shop());
@@ -153,7 +173,7 @@ public class ControlShopping implements ActionListener {
             } catch (Exception e) {
                 System.err.println(e.getMessage()+"\ncontrolShopping.shop");
             }
-        }else{
+        }else if (this.vs.jtf_nameSupplier.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Introduce el proveedor al que se le esta comprando");
         }
     }
@@ -178,11 +198,13 @@ public class ControlShopping implements ActionListener {
     }
 
     public void cancelShop(){
-        cb.query("rollback");
-        clean();
-        this.ms.clean();
-        enableShop(false);
-        this.vs.jbtn_shop.setText("Iniciar Compra");
+        if(JOptionPane.showConfirmDialog(this.vs, "Deseas cancelar la compra") == 0){
+            cb.query("rollback");
+            clean();
+            this.ms.clean();
+            enableShop(false);
+            this.vs.jbtn_shop.setText("Iniciar Compra");
+        }
     }
     
     @Override
